@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :carers do
-    resources :requests
-    resources :pets
+    resources :requests, only: %i[new create]
+  end
+
+  resources :requests, only: %i[show index edit update destroy]
+  resources :pets
 end
