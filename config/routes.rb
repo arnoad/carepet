@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
@@ -9,4 +8,10 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/carers', to: 'users#index'
   end
+  resources :carers do
+    resources :requests, only: %i[new create]
+  end
+
+  resources :requests, only: %i[show index edit update destroy]
+  resources :pets
 end
