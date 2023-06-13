@@ -4,15 +4,19 @@
       <%= image_tag "carepet_logo_v3.png" %>
     </a>
       <ul class="head-items">
+      <% if user_signed_in? %>
         <li class="head-item dropdown">
-          <img class="avatar elements-top-head dropdown-toggle" id="headDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" />
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="headDropdown">
-            <a class="dropdown-item" data-turbo-method="delete" href="#">Profile</a>
-            <a class="dropdown-item" data-turbo-method="delete" href="#">Requests</a>
-            <a class="dropdown-item" data-turbo-method="delete" href="#">Messages</a>
-            <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-          </div>
+        <%= image_tag "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="headDropdown">
+          <%= link_to "Profile", "#", class: "dropdown-item" %>
+          <%= link_to "Requests", "#", class: "dropdown-item" %>
+          <%= link_to "Messages", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+        </div>
         </li>
+      <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
       </ul>
   </div>
 </div>
