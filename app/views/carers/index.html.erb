@@ -1,0 +1,6 @@
+<%= "Find a carer in your area" %>
+
+<% @carers.each do |carer| %>
+  <%= link_to carer.full_name, carer_path(carer) %>
+  <%= carer.carer? %>
+<% end %>
