@@ -3,7 +3,6 @@ class Request < ApplicationRecord
   belongs_to :pet
 
   before_validation :set_default_status
-  
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :carers_home, presence: true
