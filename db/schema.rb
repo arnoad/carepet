@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_095226) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_145733) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_095226) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string "status", 
+    t.string "status"
     t.date "start_date"
     t.date "end_date"
     t.boolean "carers_home"
@@ -93,6 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_095226) do
     t.string "house_type"
     t.boolean "carer?", default: false
     t.integer "age"
+    t.string "city"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
