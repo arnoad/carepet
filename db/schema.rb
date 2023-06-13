@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_12_140018) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_095226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_140018) do
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "type"
+    t.string "pet_type"
     t.string "breed"
     t.string "medical_cond"
     t.string "special_needs"
@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_140018) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string "status"
+    t.string "status", 
     t.date "start_date"
     t.date "end_date"
     t.boolean "carers_home"
