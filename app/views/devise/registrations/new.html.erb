@@ -4,21 +4,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+    <%= f.input :full_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "name" }%>
     <%= f.input :age,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "age" }%>
+                input_html: { autocomplete: "name" }%>
     <%= f.input :address,
                 required: true,
                 autofocus: true,
@@ -39,6 +32,20 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "bio" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :photo, as: :file,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
   </div>
 
   <div class="form-actions">
