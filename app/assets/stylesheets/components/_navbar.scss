@@ -1,12 +1,46 @@
+
+.all-nav-items{
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+  padding: auto;
+  background-color: $blue-strong;
+}
+
+.all-nav-items i {
+  font-size: 25px;
+  color: white;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: $blue-strong;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.navbar-collapse a{
+  color: white;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-items-out{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-items-out li {
+  display: inline-block;
+  margin: 0 10px;
 }
