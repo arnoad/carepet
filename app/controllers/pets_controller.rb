@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
 
-  before_action :find_pet, only: %i[show edit update]
+  before_action :find_pet, only: %i[show edit update destroy]
 
   def index
     @pets = current_user.pets
@@ -16,6 +16,11 @@ class PetsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private
