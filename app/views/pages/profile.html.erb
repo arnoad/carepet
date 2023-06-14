@@ -1,11 +1,23 @@
-<h1>My account</h1>
-<p>Name: <%= current_user.full_name %></p>
-<p>Age: <%= current_user.age %></p>
-<p>Address: <%= current_user.address %></p>
-<p>City: <%= current_user.city %></p>
-<p>House info: <%= current_user.house_type %></p>
-<p>About me: <%= current_user.bio %></p>
+<div class='m-3'><h1>My account</h1>
+  <div class='d-flex'>
+    <div>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
+    </div>
+    <div>
+      <p>Name: <%= current_user.full_name %></p>
+      <p>Age: <%= current_user.age %></p>
+      <%= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %>
+    </div>
+  </div>
+  <div>
+    <p>Address: <%= current_user.address %></p>
+    <p>City: <%= current_user.city %></p>
+    <p>House info: <%= current_user.house_type %></p>
+    <p>About me: <%= current_user.bio %></p>
+  </div>
 
-<h2>My pets</h2>
+  <h2>My pets</h2>
 
-<%#= render 'pets/pets', pet: @pet %>
+  <%= render 'pets/pets', pets: current_user.pets %>
+
+</div>

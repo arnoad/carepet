@@ -1,5 +1,5 @@
-<% if @pets.any? %>
-  <% @pets.each do |pet| %>
+<% if pets.any? %>
+  <% pets.each do |pet| %>
     <%= link_to pet.name, pet_path(pet) %>
   <% end %>
 <% else %>
