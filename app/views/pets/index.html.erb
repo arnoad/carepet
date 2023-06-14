@@ -1,3 +1,1 @@
-<% @pets.each do |pet| %>
-  <%= link_to pet.name, pet_path(pet) %>
-<% end %>
+<%= render 'pets', pets: current_user.pets %>
