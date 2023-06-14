@@ -3,3 +3,5 @@
 <p>Address: <%= @carer.address %></p>
 <p>About my home: <%= @carer.house_type %></p>
 <p>About me: <%= @carer.bio %></p>
+<br>
+ <%= link_to 'Request', new_carer_request_path(@carer) %>

@@ -1,11 +1,10 @@
 class Request < ApplicationRecord
-  belongs_to :user
+  belongs_to :carer, class_name: 'User', foreign_key: :user_id
   belongs_to :pet
 
   before_validation :set_default_status
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :carers_home, presence: true
   validates :status, presence: true, inclusion: { in: ['pending', 'rejected', 'accepted'] }
 
   private
