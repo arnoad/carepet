@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     # get '/carers', to: 'users#index'
     # get '/carers/:id', to: 'users#show', as: 'carer'
-    
+
     resources :carers, only: %i[index show] do
       resources :requests, only: %i[new create]
     end
