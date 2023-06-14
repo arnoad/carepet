@@ -1,4 +1,4 @@
-<div class="container">
+<div class="main-box">
   <%= turbo_frame_tag "request_#{@request.id}" do %>
     <h5> Edit your request to <%= @request.carer.full_name %> </h5>
     <%= simple_form_for(@request) do |f| %>
