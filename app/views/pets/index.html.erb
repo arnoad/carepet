@@ -1,0 +1,9 @@
+<% if @pets.any? %>
+  <% @pets.each do |pet| %>
+    <%= link_to pet.name, pet_path(pet) %>
+  <% end %>
+<% else %>
+  <p> You don't have any pets yet... Please add some</p>
+<% end %>
+
+<%= link_to 'Add pet', new_pet_path %>
