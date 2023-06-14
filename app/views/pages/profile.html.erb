@@ -1,23 +1,27 @@
-<div class='m-3'><h1>My account</h1>
-  <div class='d-flex'>
-    <div>
-      <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
+<div class='m-3'>
+  <h1>My account  <%= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %></h1>
+  <div id="profile-card">
+    <div id="profile-avatar-info">
+      <div>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
+      </div>
+      <div>
+        <div id="profile-avatar-info-title">
+          <p><i class="fa-solid fa-user"></i> <%= current_user.full_name %>, <%= current_user.age %></p>
+        </div>
+        <div id="profile-avatar-info-text">
+          <p><i class="fa-solid fa-location-dot"></i> <%= current_user.address %></p>
+          <p><i class="fa-solid fa-house"></i> <%= current_user.house_type %></p>
+          <%#= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %>
+        </div>
+      </div>
     </div>
-    <div>
-      <p>Name: <%= current_user.full_name %></p>
-      <p>Age: <%= current_user.age %></p>
-      <%= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %>
+    <div id="bio">
+      <p><%= current_user.bio %></p>
     </div>
   </div>
-  <div>
-    <p>Address: <%= current_user.address %></p>
-    <p>City: <%= current_user.city %></p>
-    <p>House info: <%= current_user.house_type %></p>
-    <p>About me: <%= current_user.bio %></p>
+  <div id="pets-cards">
+    <h2>My pets    <%= link_to '', new_pet_path, class: "fa-solid fa-circle-plus" %></h2>
+    <%= render 'pets/pets', pets: current_user.pets %>
   </div>
-
-  <h2>My pets</h2>
-
-  <%= render 'pets/pets', pets: current_user.pets %>
-
 </div>
