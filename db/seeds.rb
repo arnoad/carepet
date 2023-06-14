@@ -21,9 +21,9 @@ puts 'Database cleaned !'
 
 puts 'Create users...'
 
-josh = User.create!(full_name: 'Josh', address: '33 Stendrich 4837 Membach', bio: 'this is my bio', house_type: 'with garden', carer?: false, age: 28, email: 'josh@test.com', password: '123456')
-emma = User.create!(full_name: 'Emma', address: '55 Stendrich 4700 Eupen', bio: 'this is a beautiful bio', house_type: 'flat with balcony', carer?: true, age: 31, email: 'emma@test.com', password: '123456')
-steve = User.create!(full_name: 'Steve', address: '192 Neutralstrasse 4710 Lontzen', bio: 'this is a rich bio', house_type: 'villa', carer?: true, age: 28, email: 'steve@test.com', password: '123456')
+josh = User.create!(full_name: 'Josh', address: '33 Stendrich 4837 Membach', city:'Membach', bio: 'this is my bio', house_type: 'with garden', carer?: false, age: 28, email: 'josh@test.com', password: '123456')
+emma = User.create!(full_name: 'Emma', address: '55 Stendrich 4700 Eupen',city: 'Eupen', bio: 'this is a beautiful bio', house_type: 'flat with balcony', carer?: true, age: 31, email: 'emma@test.com', password: '123456')
+steve = User.create!(full_name: 'Steve', address: '192 Neutralstrasse 4710 Lontzen',city: 'Lontzen', bio: 'this is a rich bio', house_type: 'villa', carer?: true, age: 28, email: 'steve@test.com', password: '123456')
 
 puts 'Users created !'
 
