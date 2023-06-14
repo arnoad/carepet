@@ -1,9 +1,8 @@
-  <h1> Edit your request with <%= @request.user.full_name %> </h1>
+  <h1> Edit your request with <%= @request.carer.full_name %> </h1>
 
   <%= simple_form_for(@request) do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.input :carers_home, collection: [["Carer's home", true], ["Pet's home", false]], prompt: 'Select status' %>
-    <%= f.input :status, collection: [['Accept', true], ['Reject', false]], prompt: 'Select status' %>
     <%= f.submit :Save %>
   <% end %>
