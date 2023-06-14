@@ -4,6 +4,15 @@ class CarersController < Devise::SessionsController
 
   def index
     @carers = User.all.where(carer?: true)
+
+    @markers = @carers.geocoded.map do |carer|
+      {
+        lat: carer.latitude,
+        lng: carer.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {carer: carer}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show; end

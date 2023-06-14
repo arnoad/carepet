@@ -13,6 +13,9 @@ gem "cloudinary"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+#geocoder for map
+gem "geocoder"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 

@@ -1,6 +1,11 @@
-<%= "Find a carer in your area" %>
 
-<% @carers.each do |carer| %>
-  <%= link_to carer.full_name, carer_path(carer) %>
-  <%= carer.carer? %>
-<% end %>
+<%= "Find a carer in your area" %>
+  <div style="width: 400px; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <% @carers.each do |carer| %>
+    <%= link_to carer.full_name, carer_path(carer) %>
+    <%= carer.carer? %>
+  <% end %>
