@@ -1,4 +1,5 @@
-<div class='m-3'><h1>My account  <%= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %></h1>
+<div class='m-3'>
+  <h1>My account  <%= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %></h1>
   <div id="profile-card">
     <div id="profile-avatar-info">
       <div>
@@ -19,8 +20,8 @@
       <p><%= current_user.bio %></p>
     </div>
   </div>
+  <div id="pets-cards">
+    <h2>My pets    <%= link_to '', new_pet_path, class: "fa-solid fa-circle-plus" %></h2>
+    <%= render 'pets/pets', pets: current_user.pets %>
+  </div>
 </div>
-
-  <h2>My pets</h2>
-
-  <%= render 'pets/pets', pets: current_user.pets %>
