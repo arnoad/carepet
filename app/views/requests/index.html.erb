@@ -1,19 +1,25 @@
-<h2>New Requests</h2>
-<ul>
-  <% if @requests.empty? %>
-    <li>No upcoming requests.</li>
-  <% else %>
-    <% @requests.each do |request| %>
-    <li>
-      <%= button_to "Edit", edit_request_path(request), method: :get %>
+<div class="container">
+  <h2>New Requests</h2>
+  <ul type="none">
+    <% if @requests.empty? %>
+      <li>No upcoming requests.</li>
+    <% else %>
+      <% @requests.each do |request| %>
+        <%= turbo_frame_tag "request_#{request.id}" do %>
+        <li>
 
-      <%= button_to "Delete", request_path(request), method: :delete, data: { turbo_confirm: 'Are you sure you want to delete this booking?' } %>
+          <div class="button-container">
+            <%= button_to "Edit", edit_request_path(request), method: :get, class: "button btn btn-primary mt-3" %>
+            <%= button_to "Delete", request_path(request), method: :delete, class: "button btn btn-primary mt-3", data: { turbo_confirm: 'Are you sure you want to delete this booking?' } %>
+          </div>
 
-      <%= request.carer.full_name %>
-      <%= request.start_date %>
-      <%= request.end_date %>
-      <%= request.price %>
-    </li>
+          <p><%= request.carer.full_name %></p>
+          <p><%= request.start_date %></p>
+          <p><%= request.end_date %></p>
+          <p><%= request.price %></p>
+        </li>
+      <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
