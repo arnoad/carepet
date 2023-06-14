@@ -1,8 +1,11 @@
-  <h1> Edit your request with <%= @request.carer.full_name %> </h1>
-
-  <%= simple_form_for(@request) do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :carers_home, collection: [["Carer's home", true], ["Pet's home", false]], prompt: 'Select status' %>
-    <%= f.submit :Save %>
+<div class="main-box">
+  <%= turbo_frame_tag "request_#{@request.id}" do %>
+    <h5> Edit your request to <%= @request.carer.full_name %> </h5>
+    <%= simple_form_for(@request) do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :carers_home, collection: [["Carer's home", true], ["Pet's home", false]], prompt: 'Select status' %>
+      <%= f.submit :Save, class: "btn btn-primary mt-3 w-100" %>
+    <% end %>
   <% end %>
+</div>
