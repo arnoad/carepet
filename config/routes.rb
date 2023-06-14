@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :requests, only: %i[show index edit update destroy]
-    resources :pets
   end
+  resources :pets
+
 end
