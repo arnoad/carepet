@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # root to: "pages#home"
 
+  get '/profile', to: 'pages#profile'
+
   devise_scope :user do
     # Defines the root path route ("/")
     root "carers#index"
