@@ -1,0 +1,14 @@
+<h2>New Requests</h2>
+<ul>
+  <% if @requests.empty? %>
+    <li>No upcoming requests.</li>
+  <% else %>
+    <% @requests.each do |request| %>
+    <li><%= request.carer.full_name %>
+      <%= request.start_date %>
+      <%= request.end_date %>
+      <%= request.price %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>

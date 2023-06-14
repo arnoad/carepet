@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :requests, only: %i[new create]
     end
 
-    resources :requests, only: %i[show index edit update destroy]
+    resources :requests, only: %i[index show edit update destroy]
     resources :pets
   end
 end
