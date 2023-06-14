@@ -27,25 +27,27 @@ class RequestsController < ApplicationController
     end
   end
 
-  # def show; end
+  def show; end
 
-  # def edit; end
+  def edit
+    @request = Request.find(params[:id])
+  end
 
-  # def update
-  #   @request = Request.find(params[:id])
-  #   if @request.update (strong_params)
-  #     flash[:notice] = 'Request was successfully updated.'
-  #     redirect_to requests_path
-  #   else
-  #     render :edit, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    @request = Request.find(params[:id])
+    if @request.update(request_params)
+      flash[:notice] = 'Request was successfully updated.'
+      redirect_to requests_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
-  # def destroy
-  #   @request = Request.find(params[:id])
-  #   @request.destroy
-  #   redirect_to requests_path, notice: 'Request was successfully destroyed.'
-  # end
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to requests_path, notice: 'Request was successfully destroyed.'
+  end
 
   private
 
