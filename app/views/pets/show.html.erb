@@ -7,4 +7,4 @@
 <p>Special needs? <%= @pet.special_needs %></p>
 
 <%= link_to 'Edit', edit_pet_path, class: 'btn btn-primary' %>
-<%= button_to 'Delete', pet_path(@pet), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to 'Delete', pet_path(@pet), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
