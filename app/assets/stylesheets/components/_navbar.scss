@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding-top: 10px;
+  // padding-top: 10px;
 }
 
 
@@ -14,5 +14,8 @@
   display: flex;
   align-content: stretch;
   align-items: center;
+  padding: 10px;
   justify-content: space-around;
+  margin: 0;
+
 }
