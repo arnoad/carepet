@@ -1,8 +1,8 @@
 class RequestsController < ApplicationController
 
   def index
-    @requests = Request.all
-    # @requests = current_user.requests
+    # @current_user.requests = Request.all
+    @requests = Request.where(pet: current_user.pets)
     # @upcoming_requests = @requests.where("date >= ?", Date.today).order(date: :desc)
     # @past_requests = @requests.where("date < ?", Date.today).order(date: :desc)
 
