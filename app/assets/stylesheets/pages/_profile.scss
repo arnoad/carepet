@@ -37,10 +37,17 @@
   padding: 10px;
   height: 100px;
   margin-top: 20px;
+  position: relative;
 }
 
 #profile-buttons {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.pet-delete-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
