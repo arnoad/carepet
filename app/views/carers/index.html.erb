@@ -19,11 +19,13 @@
           <div class="card-product-infos">
            <% if carer.photo.attached? %>
             <%= cl_image_tag carer.photo.key, height: 300, width: 400, crop: :fill, class: "card-product-img" %>
-          <% else %>
+           <% else %>
             <%= image_tag "Will-Smith.jpg", height: 300, width: 400, class: "card-product-img" %>
-          <% end %>
-            <%= link_to carer.full_name, carer_path(carer) %>
-            <%= link_to carer.address %>
+           <% end %>
+            <div class="card-info-text">
+              <h6><%= link_to carer.full_name, carer_path(carer) %></h6>
+              <p><%= link_to carer.address %></p>
+            </div>
           </div>
         </div>
       <% end %>
