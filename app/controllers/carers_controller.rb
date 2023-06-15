@@ -3,7 +3,7 @@ class CarersController < Devise::SessionsController
   before_action :find_carer, only: %i[show]
 
   def index
-    @carers = User.all.where(carer?: true)
+    @carers = User.all.where(carer: true)
 
     @markers = @carers.geocoded.map do |carer|
       {
@@ -20,6 +20,6 @@ class CarersController < Devise::SessionsController
   private
 
   def find_carer
-    @carer = User.where(carer?: true).find(params[:id])
+    @carer = User.where(carer: true).find(params[:id])
   end
 end
