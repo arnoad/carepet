@@ -18,7 +18,13 @@ Rails.application.routes.draw do
     resources :requests, only: %i[index show edit update destroy]
     resources :pets
   end
+
   resources :pets
-  resources :chatrooms
-  resources :forums
+  resources :chatrooms, only: %i[show] do
+    resources :messages, onlt: %i[create]
+  end
+
+  resources :forums, only: %i[index show] do
+    resources :posts, only: %i[create]
+  end
 end
