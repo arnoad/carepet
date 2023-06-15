@@ -19,6 +19,8 @@
       <p><%= @carer.bio %></p>
     </div>
   </div>
-  <%= link_to 'Back to search', carers_path, class: "btn btn-secondary" %>
-  <%= link_to 'Book this carer', new_carer_request_path(@carer), class: "btn btn-primary" %>
+  <div id="profile-buttons">
+    <%= link_to 'BOOK THIS CARER', new_carer_request_path(@carer), class: "btn-one" %>
+    <%= link_to 'BACK TO SEARCH', carers_path, class: "btn-two" %>
+  </div>
 </div>
