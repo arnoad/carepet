@@ -1,0 +1,14 @@
+<div>
+  <h1>#<%= @forum.name %></h1>
+  <div>
+    <% @forum.posts.each do |post| %>
+      <div>
+        <small>
+          <strong><%= post.carer.full_name %></strong>
+          <i><%= post.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <p><%= post.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
