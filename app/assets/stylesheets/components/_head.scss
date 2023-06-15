@@ -1,11 +1,12 @@
 .head {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background-color: white;
   margin: auto;
   margin-top: 10px;
+  align-items: flex-start;
 }
+
 
 .elements-top-head {
   display: flex;
@@ -13,14 +14,18 @@
   align-items: center;
 }
 
+
 .head-item{
 list-style-type: none;
 }
 
+
 .head-brand {
   flex-grow: 0;
 
+
 }
+
 
 .head-brand img {
   max-width: 100%;
@@ -29,14 +34,17 @@ list-style-type: none;
   object-fit: contain;
 }
 
+
 .head-item.dropdown {
   position: relative;
 }
+
 
 .dropdown-menu-end {
   right: 0;
   left: auto;
 }
+
 
 .avatar {
   width: 40px;
