@@ -1,12 +1,12 @@
 <div class='m-3'>
   <h1>My account  <%= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %></h1>
-  <div id="profile-card">
-    <div id="profile-avatar-info">
+  <div class="profile-card">
+    <div class="profile-avatar-info">
       <div>
         <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
       </div>
       <div>
-        <div id="profile-avatar-info-title">
+        <div class="profile-avatar-info-title">
           <p><i class="fa-solid fa-user"></i> <%= current_user.full_name %>, <%= current_user.age %></p>
         </div>
         <div id="profile-avatar-info-text">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <div id="bio">
+    <div class="bio">
       <p><%= current_user.bio %></p>
     </div>
   </div>
