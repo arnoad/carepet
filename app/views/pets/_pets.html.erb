@@ -1,7 +1,7 @@
 <% if pets.any? %>
   <% pets.each do |pet| %>
-    <div id="profile-card">
-      <%= link_to pet.name, pet_path(pet) %>
+    <div id="pet-profile-card">
+      <%= pet.pet_type %>: <%= pet.name %>
     </div>
   <% end %>
 <% else %>
