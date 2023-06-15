@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     resources :pets
   end
   resources :pets
-
+  resources :chatrooms
+  resources :forums
 end
