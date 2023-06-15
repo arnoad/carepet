@@ -65,6 +65,13 @@ h3 {
   margin-top: 8px;
 }
 
+
 .card-product .card-product-infos {
   padding: 16px;
+      display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
 }
