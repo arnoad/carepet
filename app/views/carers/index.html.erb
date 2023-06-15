@@ -1,11 +1,31 @@
 
-<%= "Find a carer in your area" %>
-  <div style="width: 400px; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="main-box">
+  <div class = "find-banner">
+    <h4>Find a carer in your area</h4>
+  </div class= "map-carers">
+    <div style="width: 350px; height: 400px; padding: auto; margin: auto;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
 
-  <% @carers.each do |carer| %>
-    <%= link_to carer.full_name, carer_path(carer) %>
-    <%= carer.carer? %>
-  <% end %>
+  <div class = "find-banner-subt">
+  <h3> Carers near you </h3>
+  </div>
+
+  <div class="m-5">
+      <% @carers.each do |carer| %>
+        <div class="card-product">
+          <div class="card-product-infos">
+           <% if carer.photo.attached? %>
+            <%= cl_image_tag carer.photo.key, height: 300, width: 400, crop: :fill, class: "card-product-img" %>
+          <% else %>
+            <%= image_tag "Will-Smith.jpg", height: 300, width: 400, class: "card-product-img" %>
+          <% end %>
+            <%= link_to carer.full_name, carer_path(carer) %>
+            <%= link_to carer.address %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
