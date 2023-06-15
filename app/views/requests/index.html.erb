@@ -1,6 +1,10 @@
 <div class="main-box">
   <h2>New Requests</h2>
     <ul type="none">
+    <% if @user.carer? %>
+
+
+    <% else %>
       <% if @requests.empty? %>
         <li>No upcoming requests.</li>
       <% else %>
@@ -8,7 +12,7 @@
           <div id="profile-card">
             <div id="profile-avatar-info">
               <div>
-                <% if request.carer.photo.attached? %>
+                <% if request.user.photo.attached? %>
                 	  <%= cl_image_tag request.carer.photo.key, class: "avatar-profile" %>
                 <% else %>
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -38,4 +42,5 @@
         <% end %>
       <% end %>
     </ul>
+    <% end %>
 </div>

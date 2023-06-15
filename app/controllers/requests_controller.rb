@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
     # @user_requests = Request.where(user: current_user.user)
     # @user_upcoming_requests = @user_requests.where("date >= ?", Date.today).order(date: :desc)
     # @user_past_requests = @user_requests.where("date < ?", Date.today).order(date: :desc)
+    @user = current_user
   end
 
   def new
