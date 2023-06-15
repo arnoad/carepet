@@ -1,14 +1,16 @@
 .main-box{
   margin-bottom: 100px;
-  margin: auto;
-  padding: auto;
+  margin-right: 2em;
+  margin-left: 2em;
 }
+
 
 .button-container {
   display: flex;
   justify-content: space-between;
   padding: 10px;
 }
+
 
 .button {
   width: 120px;
