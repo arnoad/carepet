@@ -1,9 +1,7 @@
 .find-banner {
   background-color: rgba(24, 87, 99, 0.75);
   text-align: center;
-  margin-top: 5px;
   margin-bottom: 10px;
-  margin-top: 10px;
   height: 30px;
   width: 100%;
 }
@@ -14,7 +12,6 @@
   text-align: center;
   margin-top: 5px;
   margin-bottom: 10px;
-  margin-top: 10px;
   height: 30px;
   width: 100%;
 }
@@ -46,6 +43,7 @@ h3 {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 
@@ -86,4 +84,23 @@ h3 {
   padding: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
 }
