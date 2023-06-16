@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import ViewToggleController from "./view_toggle_controller"
+application.register("view-toggle", ViewToggleController)
