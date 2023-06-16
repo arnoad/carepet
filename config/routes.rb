@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :pets
   end
 
-  resources :pets
+  # resources :pets
   resources :chatrooms, only: %i[show] do
     resources :messages, onlt: %i[create]
   end
