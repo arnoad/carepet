@@ -17,29 +17,30 @@ Request.destroy_all
 Pet.destroy_all
 User.destroy_all
 
-puts 'Database cleaned !'
+# puts 'Database cleaned !'
 
-puts 'Create users...'
+# puts 'Create users...'
 
-josh = User.create!(full_name: 'Josh Trey', address: '33 Stendrich 4837 Membach', city:'Membach', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae.', house_type: 'with garden', carer: false, age: 28, email: 'josh@test.com', password: '123456')
-emma = User.create!(full_name: 'Emma Wendy', address: '55 Stendrich 4700 Eupen',city: 'Eupen', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae.', house_type: 'flat with balcony', carer: true, age: 31, email: 'emma@test.com', password: '123456')
-steve = User.create!(full_name: 'Steve Smith', address: '192 Neutralstrasse 4710 Lontzen',city: 'Lontzen', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae.', house_type: 'villa', carer: true, age: 28, email: 'steve@test.com', password: '123456')
+# rick = User.create!(full_name: 'Rick Sanchez', address: "420 Queen Street, Brisbane", city:'Brisbane', bio: "I'm Rick Sanchez, the blue-haired genius from 'Rick and Morty.' With my portal gun and sharp intellect, I navigate dimensions, challenge norms, and question the fabric of existence. I may be chaotic and cynical, but deep down, I care about my family... in my own twisted way.", house_type: 'with garden', carer: true, age: 63, email: 'rick@test.com', password: '123456')
+# morty = User.create!(full_name: 'Morty Smith', address: "275 George Street, Brisbane",city: 'Brisbane', bio: "I'm Morty Smith, the timid yet loyal companion of Rick in 'Rick and Morty.' Navigating bizarre dimensions and facing existential dilemmas alongside Rick, I often find myself out of my comfort zone. Despite my insecurities, I strive to balance adventure with moral compass, growing both intellectually and emotionally.", house_type: 'flat with balcony', carer: true, age: 18, email: 'morty@test.com', password: '123456')
+# stan = User.create!(full_name: 'Stan Marsh', address: "140 Creek Street, Brisbane",city: 'Brisbane', bio: "I'm Stan Marsh, one of the main characters in 'South Park.' Navigating the absurdities of our town with my friends, I often find myself in hilarious and outrageous situations. As a voice of reason and compassion, I tackle social issues and learn valuable life lessons, all while embracing the quirks and humor of our unique community.", house_type: 'villa', carer: true, age: 20, email: 'stan@test.com', password: '123456')
 
-puts 'Users created !'
 
-puts 'Create pets...'
+# puts 'Users created !'
 
-Pet.create!(name: 'Tempo', age: 3, pet_type: 'cat', breed: 'bengal', medical_cond: 'none', special_needs: 'none', user: josh)
-Pet.create!(name: 'Mr Bean', age: 4, pet_type: 'dog', breed: 'labrador', medical_cond: 'none', special_needs: 'none', user: emma)
-pet = Pet.create!(name: 'cartman', age: 6, pet_type: 'bunny', breed: 'dwarf', medical_cond: 'none', special_needs: 'none', user: steve)
-Pet.create!(name: 'remy', age: 2, pet_type: 'rat', breed: 'brown rat', medical_cond: 'none', special_needs: 'good cuisine', user: steve)
+# puts 'Create pets...'
 
-puts 'Pets created...'
+# Pet.create!(name: 'Tempo', age: 3, pet_type: 'cat', breed: 'bengal', medical_cond: 'none', special_needs: 'none', user: rick)
+# Pet.create!(name: 'Mr Bean', age: 4, pet_type: 'dog', breed: 'labrador', medical_cond: 'none', special_needs: 'none', user: morty)
+# pet = Pet.create!(name: 'Dingo', age: 6, pet_type: 'bunny', breed: 'dwarf', medical_cond: 'none', special_needs: 'none', user: stan)
+# Pet.create!(name: 'Remy', age: 2, pet_type: 'rat', breed: 'brown rat', medical_cond: 'none', special_needs: 'good cuisine', user: stan)
 
-puts 'Create requests...'
+# puts 'Pets created...'
 
-Request.create!(status: 'pending', start_date: '2023-08-01', end_date: '2023-08-03', carers_home: true, carer: steve, pet: pet, price: 15)
+# puts 'Create requests...'
 
-puts 'Pets created...'
+# Request.create!(status: 'pending', start_date: '2023-08-01', end_date: '2023-08-03', carers_home: true, carer: stan, pet: pet, price: 15)
 
-puts 'SEEDS DONE !'
+# puts 'Pets created...'
+
+# puts 'SEEDS DONE !'
