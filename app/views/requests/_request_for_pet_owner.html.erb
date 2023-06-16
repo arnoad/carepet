@@ -1,0 +1,30 @@
+<div id="profile-card">
+  <div id="profile-avatar-info">
+    <div>
+      <% if request.carer.photo.attached? %>
+          <%= cl_image_tag request.carer.photo.key, class: "avatar-profile" %>
+      <% else %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+          <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+          <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
+        </svg>
+      <% end %>
+    </div>
+    <%= turbo_frame_tag "request_#{request.id}" do %>
+      <div class="button-container">
+        <%= button_to "Edit", edit_request_path(request), method: :get, class: "button btn btn-primary mt-3" %>
+        <%= button_to "Delete", request_path(request), method: :delete, class: "button btn btn-primary mt-3", data: { turbo_confirm: 'Are you sure you want to delete this booking?' } %>
+      </div>
+      <div id="profile-avatar-info-title">
+        <p><i class="fa-solid fa-user"></i> <%= request.carer.full_name %></p>
+        <div id="profile-avatar-info-text">
+          <p><%= request.start_date %></p>
+          <p><%= request.end_date %></p>
+          <p><%= request.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
