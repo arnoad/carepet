@@ -2,7 +2,11 @@ class RequestsController < ApplicationController
 
   def index
     # @current_user.requests = Request.all
-    @requests = Request.where(pet: current_user.pets)
+    if current_user.carer?
+      @requests = Request.where(carer: current_user)
+    else
+      @requests = Request.where(pet: current_user.pets)
+    end
     # @upcoming_requests = @requests.where("date >= ?", Date.today).order(date: :desc)
     # @past_requests = @requests.where("date < ?", Date.today).order(date: :desc)
 
@@ -47,7 +51,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    redirect_to requests_path, notice: 'Request was successfully destroyed.'
+    redirect_to requests_path, notice: 'Request was successfully deleted.'
   end
 
   private

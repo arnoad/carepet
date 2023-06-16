@@ -25,6 +25,7 @@ User.destroy_all
 # morty = User.create!(full_name: 'Morty Smith', address: "275 George Street, Brisbane",city: 'Brisbane', bio: "I'm Morty Smith, the timid yet loyal companion of Rick in 'Rick and Morty.' Navigating bizarre dimensions and facing existential dilemmas alongside Rick, I often find myself out of my comfort zone. Despite my insecurities, I strive to balance adventure with moral compass, growing both intellectually and emotionally.", house_type: 'flat with balcony', carer: true, age: 18, email: 'morty@test.com', password: '123456')
 # stan = User.create!(full_name: 'Stan Marsh', address: "140 Creek Street, Brisbane",city: 'Brisbane', bio: "I'm Stan Marsh, one of the main characters in 'South Park.' Navigating the absurdities of our town with my friends, I often find myself in hilarious and outrageous situations. As a voice of reason and compassion, I tackle social issues and learn valuable life lessons, all while embracing the quirks and humor of our unique community.", house_type: 'villa', carer: true, age: 20, email: 'stan@test.com', password: '123456')
 
+
 # puts 'Users created !'
 
 # puts 'Create pets...'

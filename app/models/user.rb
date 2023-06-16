@@ -23,4 +23,12 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :full_name, presence: true
   validates :city, presence: true
+
+  #Search Bar
+  include PgSearch::Model
+  pg_search_scope :search_by_carer,
+    against: [ :city ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

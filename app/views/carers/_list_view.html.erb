@@ -1,0 +1,39 @@
+
+  <div class="wrapping-list">
+    <div class="find-banner">
+      <h3>Carers near you</h3>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: carers_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "City"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div>
+      <% carers.each do |carer| %>
+        <div class="card-product">
+          <div class="card-product-infos">
+            <div class="card-info-img">
+              <% if carer.photo.attached? %>
+                <%= cl_image_tag carer.photo.key, height: 300, width: 400, crop: :fill, class: "card-product-img" %>
+              <% else %>
+                <%= image_tag "Will-Smith.jpg", height: 300, width: 400, class: "card-product-img" %>
+              <% end %>
+            </div>
+            <div class="card-info-text">
+              <h6><%= link_to carer.full_name, carer_path(carer) %></h6>
+              <p class="address"><strong>Address:</strong> <%= carer.address %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
