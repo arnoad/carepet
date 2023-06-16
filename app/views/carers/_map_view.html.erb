@@ -1,0 +1,11 @@
+<div class="wrapping-map">
+    <div class="find-banner">
+      <h4>Find a carer in your area</h4>
+    </div>
+    <div class="map-carers">
+      <div style="width: 100%; height: 600px; padding: auto; margin: auto; border-radius: 8px"
+        data-controller="map"
+        data-map-markers-value="<%= markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+</div>

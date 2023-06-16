@@ -5,6 +5,7 @@ class CarersController < Devise::SessionsController
   def index
     @carers = User.all.where(carer: true)
 
+    # Map
     @markers = @carers.geocoded.map do |carer|
       {
         lat: carer.latitude,
@@ -13,6 +14,20 @@ class CarersController < Devise::SessionsController
         marker_html: render_to_string(partial: "marker")
       }
     end
+
+    # Search
+    if params[:query].present?
+      @carers = @carers.search_by_carer(params[:query])
+    else
+      @carers = User.all.where(carer: true)
+    end
+
+    # VIEW
+    respond_to do |format|
+      format.html # Render the default HTML template
+      format.js   # Render the corresponding JavaScript response
+    end
+
   end
 
   def show; end
