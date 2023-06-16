@@ -29,9 +29,9 @@ puts 'Users created !'
 
 puts 'Create pets...'
 
-pet = Pet.create!(name: 'Tempo', age: 3, pet_type: 'cat', breed: 'bengal', medical_cond: 'none', special_needs: 'none', user: josh)
+Pet.create!(name: 'Tempo', age: 3, pet_type: 'cat', breed: 'bengal', medical_cond: 'none', special_needs: 'none', user: josh)
 Pet.create!(name: 'Mr Bean', age: 4, pet_type: 'dog', breed: 'labrador', medical_cond: 'none', special_needs: 'none', user: emma)
-Pet.create!(name: 'cartman', age: 6, pet_type: 'bunny', breed: 'dwarf', medical_cond: 'none', special_needs: 'none', user: steve)
+pet = Pet.create!(name: 'cartman', age: 6, pet_type: 'bunny', breed: 'dwarf', medical_cond: 'none', special_needs: 'none', user: steve)
 Pet.create!(name: 'remy', age: 2, pet_type: 'rat', breed: 'brown rat', medical_cond: 'none', special_needs: 'good cuisine', user: steve)
 
 puts 'Pets created...'
