@@ -122,6 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_083037) do
     t.boolean "carer", default: false
     t.integer "age"
     t.string "city"
+    t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
