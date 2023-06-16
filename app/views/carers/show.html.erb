@@ -1,5 +1,26 @@
-<h1><%= @carer.full_name %></h1>
-<p>Age: <%= @carer.age %></p>
-<p>Address: <%= @carer.address %></p>
-<p>About my home: <%= @carer.house_type %></p>
-<p>About me: <%= @carer.bio %></p>
+<div class="m-3">
+  <h1><%= @carer.full_name %>'s profile</h1>
+  <div class="profile-card">
+    <div class="profile-avatar-info">
+      <div>
+        <%= cl_image_tag @carer.photo.key, class: "avatar-profile" %>
+      </div>
+      <div>
+        <div class="profile-avatar-info-title">
+          <p><i class="fa-solid fa-user"></i> <%= @carer.full_name %>, <%= @carer.age %></p>
+        </div>
+        <div class="profile-avatar-info-text">
+          <p><i class="fa-solid fa-location-dot"></i> <%= @carer.address %></p>
+          <p><i class="fa-solid fa-house"></i> <%= @carer.house_type %></p>
+        </div>
+      </div>
+    </div>
+    <div class="bio">
+      <p><%= @carer.bio %></p>
+    </div>
+  </div>
+  <div class="profile-buttons">
+    <%= link_to 'BOOK THIS CARER', new_carer_request_path(@carer), class: "btn-one" %>
+    <%= link_to 'BACK TO SEARCH', carers_path, class: "btn-two" %>
+  </div>
+</div>

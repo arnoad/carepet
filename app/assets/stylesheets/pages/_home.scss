@@ -1,1 +1,106 @@
-// Specific CSS for your home-page
+.find-banner {
+  background-color: rgba(24, 87, 99, 0.75);
+  text-align: center;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 100%;
+}
+
+
+.find-banner-subt {
+  background-color:rgba(40, 146, 164, 0.5);
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 100%;
+}
+
+
+h4 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+}
+
+
+
+
+.card-product .card-product-infos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-info-text {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+}

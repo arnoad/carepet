@@ -1,0 +1,53 @@
+.profile-card {
+  padding: 18px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.profile-avatar-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile-avatar-info-title {
+  font-size: 20px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+.profile-avatar-info-text {
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.bio {
+  margin-top: 20px;
+}
+
+#pets-cards {
+  margin-top: 30px;
+}
+
+#pet-profile-card {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 10px;
+  height: 100px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pet-delete-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}

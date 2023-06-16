@@ -1,0 +1,15 @@
+<% if pets.any? %>
+  <% pets.each do |pet| %>
+    <div id="pet-profile-card">
+      <strong><%= pet.pet_type %>: <%= pet.name %></strong>
+        <p>Medical condition? <%= pet.medical_cond %></p>
+        <p>Special needs? <%= pet.special_needs %></p>
+      <div class="pet-delete-btn">
+        <i class="fa-solid fa-trash-can"></i>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p> You don't have any pets yet... Please add some</p>
+<% end %>
+<%#= button_to '', pet_path(@pet), class: "fa-solid fa-trash-can", class: "fa-solid fa-pen-to-square", method: :delete, data: { turbo_confirm: "Are you sure you want to remove this pet?" } %>

@@ -1,0 +1,19 @@
+.main-box{
+  margin-bottom: 100px;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.button {
+  width: 120px;
+  flex: 1;
+  margin: 0 5px;
+}

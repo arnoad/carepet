@@ -1,10 +1,14 @@
-<%= simple_form_for pet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :pet_type %>
-  <%= f.input :breed %>
-  <%= f.input :medical_cond %>
-  <%= f.input :special_needs %>
-  <%= f.submit class: 'btn btn-primary' %>
-
-<% end %>
+<div class="rounded-form">
+  <%= simple_form_for pet do |f| %>
+    <%= f.input :name, label: "Pet's name" %>
+    <%= f.input :age %>
+    <%= f.input :pet_type, label: "Animal" %>
+    <%= f.input :breed %>
+    <%= f.input :medical_cond, label: "Medical condition" %>
+    <%= f.input :special_needs %>
+    <%= f.submit class: 'btn-one', style: 'border: none; background-color: $blue-strong; color: white; text-decoration: none; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 10px;', value: "add pet to my profile" %>
+  <% end %>
+  <div class="profile-buttons">
+    <%= link_to 'CANCEL', profile_path, class: "btn-two", style: "width: 100%;" %>
+  </div>
+</div>

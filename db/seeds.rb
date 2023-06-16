@@ -25,7 +25,6 @@ rick = User.create!(full_name: 'Rick Sanchez', address: '420 Queen Street, Brisb
 morty = User.create!(full_name: 'Morty Smith', address: '275 George Street, Brisbane', city: "Brisbane", bio: "I'm Morty Smith, the timid yet loyal companion of Rick in 'Rick and Morty.' Navigating bizarre dimensions and facing existential dilemmas alongside Rick, I often find myself out of my comfort zone. Despite my insecurities, I strive to balance adventure with moral compass, growing both intellectually and emotionally.", house_type: 'flat with balcony', carer: true, age: 18, email: 'morty@test.com', password: '123456')
 stan = User.create!(full_name: 'Stan Marsh', address: '140 Creek Street, Brisbane', city: "Brisbane", bio: "I'm Stan Marsh, one of the main characters in 'South Park.' Navigating the absurdities of our town with my friends, I often find myself in hilarious and outrageous situations. As a voice of reason and compassion, I tackle social issues and learn valuable life lessons, all while embracing the quirks and humor of our unique community.", house_type: 'villa', carer: true, age: 28, email: 'stan@test.com', password: '123456')
 
-
 puts 'Users created !'
 
 puts 'Create pets...'
@@ -34,6 +33,12 @@ Pet.create!(name: 'Tempo', age: 3, pet_type: 'cat', breed: 'bengal', medical_con
 Pet.create!(name: 'Mr Bean', age: 4, pet_type: 'dog', breed: 'labrador', medical_cond: 'none', special_needs: 'none', user: morty)
 Pet.create!(name: 'Cartman', age: 6, pet_type: 'bunny', breed: 'dwarf', medical_cond: 'none', special_needs: 'none', user: stan)
 Pet.create!(name: 'Remy', age: 2, pet_type: 'rat', breed: 'brown rat', medical_cond: 'none', special_needs: 'good cuisine', user: stan)
+
+puts 'Pets created...'
+
+puts 'Create requests...'
+
+Request.create!(status: 'pending', start_date: '2023-08-01', end_date: '2023-08-03', carers_home: true, carer: steve, pet: pet, price: 15)
 
 puts 'Pets created...'
 

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # root to: "pages#home"
 
+  get '/profile', to: 'pages#profile'
+
   devise_scope :user do
     # Defines the root path route ("/")
     root "carers#index"
@@ -13,8 +15,16 @@ Rails.application.routes.draw do
       resources :requests, only: %i[new create]
     end
 
-    resources :requests, only: %i[show index edit update destroy]
+    resources :requests, only: %i[index show edit update destroy]
+    resources :pets
   end
-  resources :pets
 
+  resources :pets
+  resources :chatrooms, only: %i[show] do
+    resources :messages, onlt: %i[create]
+  end
+
+  resources :forums, only: %i[index show] do
+    resources :posts, only: %i[create]
+  end
 end
