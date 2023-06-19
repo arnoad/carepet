@@ -6,6 +6,8 @@
     <%= f.input :breed %>
     <%= f.input :medical_cond, label: "Medical condition" %>
     <%= f.input :special_needs %>
+    <%= f.input :photo, as: :file %>
+
     <%= f.submit class: 'btn-one', style: 'border: none; background-color: $blue-strong; color: white; text-decoration: none; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 10px;', value: "SAVE" %>
   <% end %>
   <div class="profile-buttons">
