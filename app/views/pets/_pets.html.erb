@@ -1,7 +1,8 @@
 <% if pets.any? %>
   <% pets.each do |pet| %>
     <div id="pet-profile-card">
-      <strong><%= pet.pet_type %>: <%= pet.name %></strong>
+        <%= pet.photo %>
+        <strong><%= pet.pet_type %>: <%= pet.name %></strong>
         <p>Medical condition? <%= pet.medical_cond %></p>
         <p>Special needs? <%= pet.special_needs %></p>
       <div class="pet-delete-btn">
