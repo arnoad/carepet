@@ -2,7 +2,7 @@
   <div class="profile-avatar-info">
     <div>
       <% if request.carer.photo.attached? %>
-          <%= cl_image_tag request.carer.photo.key, class: "avatar-profile" %>
+          <%= cl_image_tag request.pet.user.photo.key, class: "avatar-profile" %>
       <% else %>
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -14,11 +14,12 @@
     </div>
     <%= turbo_frame_tag "request_#{request.id}" do %>
       <div class="profile-avatar-info-title">
+          <p>$ <%= request.price %></p>
+        <div class="profile-avatar-info-text">
         <p><i class="fa-solid fa-user"></i> <%= request.carer.full_name %></p>
-        <div id="profile-avatar-info-text">
           <p><%= request.start_date.strftime("%d/%m/%Y") %></p>
           <p><%= request.end_date.strftime("%d/%m/%Y") %></p>
-          <p>$ <%= request.price %></p>
+          <p><%= request.pet.pet_type %>: <%= request.pet.name %></p>
           <p><%= request.status %></p>
         </div>
       </div>

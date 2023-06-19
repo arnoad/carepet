@@ -27,3 +27,21 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-right: 10px;
 }
+
+.avatar-small {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+}
+
+.avatar-medium {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+}
