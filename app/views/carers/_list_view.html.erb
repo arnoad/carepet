@@ -19,6 +19,7 @@
 
     <div>
       <% carers.each do |carer| %>
+        <%= link_to carer_path(carer), style: "text-decoration: none;" do %>
         <div class="card-product">
           <div class="card-product-infos">
             <div class="card-info-img">
@@ -29,10 +30,11 @@
               <% end %>
             </div>
             <div class="card-info-text">
-              <h6><%= link_to carer.full_name, carer_path(carer) %></h6>
+              <h6><%= link_to carer.full_name, carer_path(carer), style: "text-decoration: none;" %></h6>
               <p class="address"><strong>Address:</strong> <%= carer.address %></p>
             </div>
           </div>
+          <% end %>
         </div>
       <% end %>
     </div>
