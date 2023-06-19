@@ -1,3 +1,6 @@
-<h6><%= link_to carer.full_name, carer_path(carer) %></h6>
-<p><strong>Address: </strong><%= carer.address %></p>
-
+<h6><%= link_to carer_path(carer), style: "text-decoration: none;" do %></h6>
+  <div>
+    <%= carer.full_name %>
+    <p><%= carer.address %></p>
+  </div>
+<% end %>
