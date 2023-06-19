@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_19_103832) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -108,6 +109,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_103832) do
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "carer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carer_id"], name: "index_reviews_on_carer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -123,7 +134,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_103832) do
     t.boolean "carer", default: false
     t.integer "age"
     t.string "city"
-    t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -142,4 +152,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_103832) do
   add_foreign_key "posts", "users"
   add_foreign_key "requests", "pets"
   add_foreign_key "requests", "users"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "carer_id"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   devise_for :users
   # root to: "pages#home"
 
@@ -27,4 +28,9 @@ Rails.application.routes.draw do
   resources :forums, only: %i[index show] do
     resources :posts, only: %i[create]
   end
+
+  resources :users do
+    resources :reviews, only: %i[new create]
+  end
+  resources :reviews, only: [:destroy]
 end
