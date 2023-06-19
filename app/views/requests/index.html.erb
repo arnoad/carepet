@@ -1,11 +1,19 @@
 <div class='m-3'>
-  <h2>New Requests</h2>
-    <%# <ul type="none"> %>
+  <h3 class="request-info">Upcoming Requests</h3>
     <% if @user.carer? %> <%# carer view %>
-      <% if @requests.empty? %>
-            <p>No upcoming requests.</p>
+      <% if @upcoming_requests.empty? %>
+        <p>No upcoming requests.</p>
+      <% else %>
+        <% @upcoming_requests.each do |request| %>
+          <%= render 'request_for_carer', request: request %>
+        <% end %>
+      <% end %>
+      <br>
+        <h3 class="request-info">Past Requests</h3>
+        <% if @past_requests.empty? %>
+          <p>No past requests.</p>
         <% else %>
-          <% @requests.each do |request| %>
+          <% @past_requests.each do |request| %>
             <%= render 'request_for_carer', request: request %>
           <% end %>
         <% end %>
@@ -18,6 +26,5 @@
           <%= render 'request_for_pet_owner', request: request %>
         <% end %>
       <% end %>
-    <%# </ul> %>
     <% end %>
 </div>
