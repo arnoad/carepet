@@ -16,9 +16,9 @@
       <div class="profile-avatar-info-title">
         <p><i class="fa-solid fa-user"></i> <%= request.carer.full_name %></p>
         <div id="profile-avatar-info-text">
-          <p><%= request.start_date %></p>
-          <p><%= request.end_date %></p>
-          <p><%= request.price %></p>
+          <p><%= request.start_date.strftime("%d/%m/%Y") %></p>
+          <p><%= request.end_date.strftime("%d/%m/%Y") %></p>
+          <p>$ <%= request.price %></p>
           <p><%= request.status %></p>
         </div>
       </div>
