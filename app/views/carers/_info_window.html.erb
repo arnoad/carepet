@@ -1,5 +1,6 @@
 <h6><%= link_to carer_path(carer), style: "text-decoration: none;" do %></h6>
   <div>
+    <%= cl_image_tag carer.photo.key, class: "avatar-small" %>
     <%= carer.full_name %>
     <p><%= carer.address %></p>
   </div>
