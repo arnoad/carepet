@@ -26,3 +26,12 @@
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
 }
+
+.avatar-reviews {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
