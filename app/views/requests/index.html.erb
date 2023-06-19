@@ -3,7 +3,7 @@
     <%# <ul type="none"> %>
     <% if @user.carer? %> <%# carer view %>
       <% if @requests.empty? %>
-            <li>No upcoming requests.</li>
+            <p>No upcoming requests.</p>
         <% else %>
           <% @requests.each do |request| %>
             <%= render 'request_for_carer', request: request %>
@@ -12,7 +12,7 @@
 
     <% else %> <%# user view %>
       <% if @requests.empty? %>
-        <li>No upcoming requests.</li>
+        <p>No upcoming requests.</p>
       <% else %>
         <% @requests.each do |request| %>
           <%= render 'request_for_pet_owner', request: request %>
