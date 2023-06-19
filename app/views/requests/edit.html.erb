@@ -2,8 +2,8 @@
   <%= turbo_frame_tag "request_#{@request.id}" do %>
     <h5> Edit your request to <%= @request.carer.full_name %> </h5>
     <%= simple_form_for(@request) do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
+      <%= f.input :start_date, order: [:day, :month, :year] %>
+      <%= f.input :end_date, order: [:day, :month, :year] %>
       <%= f.input :carers_home, collection: [["Carer's home", true], ["Pet's home", false]], prompt: 'Select status' %>
       <%= f.input :price %>
       <%= f.association :pet, collection: current_user.pets %>

@@ -4,8 +4,8 @@
     <% if @request.errors.any? %>
       <% @request.errors.full_messages %>
     <% end %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%= f.input :start_date, order: [:day, :month, :year] %>
+    <%= f.input :end_date, order: [:day, :month, :year] %>
     <%= f.input :carers_home %>
     <%= f.input :price %>
     <%= f.association :pet, collection: current_user.pets %>
