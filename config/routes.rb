@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     resources :messages, onlt: %i[create]
   end
 
-  resources :forums, only: %i[index show] do
+  resources :forums, only: %i[index show new create] do
     resources :posts, only: %i[create]
   end
 end
