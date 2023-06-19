@@ -1,3 +1,28 @@
-<div class="m-3">
-  <h1>CarePet Forum</h1>
+
+<div class="main-box">
+  <h4>Join The Discussion</h4>
+
+    <% @forums.each do |forum|%>
+     <div class="forum-thread">
+        <div class="user-info-thread">
+          <div class="picture-user">
+            <% if forum.user.photo.attached? %>
+              <%= cl_image_tag forum.user.photo.key, class: "card-user-img round-image" %>
+            <% else %>
+              <%= image_tag "Will-Smith.jpg", class: "card-user-img round-image" %>
+            <% end %>
+          </div>
+        </div>
+          <div class="topic-info">
+            <p class="post-date"><em><%= forum.created_at.strftime("%d/%m/%Y %H:%M:%S") %> - <%= forum.category%></em></p>
+            <p class="user-name"><strong><%= forum.user.full_name%></strong> - <strong><%=forum.title %>:</strong></p>
+            <p class="description"><em><%=forum.description %></em></p>
+          </div>
+         <div class="icons">
+            <i class="far fa-heart"></i>
+            <%= link_to forum_path(forum.id), class: "forum-link" do %>
+              <i class="far fa-comment"></i>
+            <% end %>
+      </div>
+    <% end %>
 </div>

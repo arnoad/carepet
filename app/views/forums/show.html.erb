@@ -1,14 +1,27 @@
-<div>
-  <h1>#<%= @forum.name %></h1>
-  <div>
+<!-- app/views/chatrooms/show.html.erb -->
+<div class="container chatroom" data-controller="forum-subscription"
+data-forum-subscription-forum-id-value="<%=@forum.id%>">
+  <h1>#<%= @forum.title %></h1>
+
+  <div class="messages" data-forum-subscription-target="messages">
     <% @forum.posts.each do |post| %>
-      <div>
-        <small>
-          <strong><%= post.carer.full_name %></strong>
-          <i><%= post.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= post.content %></p>
-      </div>
+      <%= render "posts/post", post: post%>
     <% end %>
   </div>
+
+  <%= simple_form_for [@forum, @post],
+  html: {data: { action: "turbo:submit-end->forum-subscription#resetForm" }, class: "d-flex"} do |f|
+%>
+  <%= f.input :content,
+    label: false,
+    placeholder: "Message ##{@forum.title}",
+    wrapper_html: {class: "flex-grow-1"}
+  %>
+  <%= button_tag(type: 'submit', class: 'btn btn-four mb-3') do %>
+  <i class="fa-regular fa-square-caret-right"></i>
+  <% end %>
+<% end %>
+<br>
+<br>
+<br>
 </div>
