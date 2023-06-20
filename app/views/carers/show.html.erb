@@ -17,12 +17,16 @@
             <% avg_sum = 0 %>
             <% avg_sum %>
             <% @reviews.size %>
-            <% @reviews.each do |review| %>
-            <% avg_sum += review.rating %>
-            <% end %>
+              <% @reviews.each do |review| %>
+              <% avg_sum += review.rating %>
+              <% end %>
             <% avg_sum %>
-            <% avg_rating = avg_sum / @reviews.count %>
-            <%= avg_rating.round(2) %>
+              <% if @reviews.count > 0 %>
+              <% avg_rating = avg_sum / @reviews.count %>
+              <%= avg_rating.round(2) %>
+              <% else %>
+              <p>This carer has no ratings yet.</p>
+              <% end %>
           </p>
         </div>
       </div>
