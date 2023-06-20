@@ -16,7 +16,7 @@
       <div class="profile-avatar-info-title">
           <p>$ <%= request.price %></p>
         <div class="profile-avatar-info-text">
-        <p><i class="fa-solid fa-user"></i> <%= request.carer.full_name %></p>
+        <p><i class="fa-solid fa-user"></i> <%= request.pet.user.full_name %></p>
           <p><%= request.start_date.strftime("%d/%m/%Y") %></p>
           <p><%= request.end_date.strftime("%d/%m/%Y") %></p>
           <p><%= request.pet.pet_type %>: <%= request.pet.name %></p>
