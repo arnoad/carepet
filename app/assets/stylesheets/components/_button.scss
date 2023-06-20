@@ -38,16 +38,9 @@
 }
 
 .btn-four{
-  display: flex;
   color: #2892A4;
-  text-align: center;
-  font-size: 45px;
-  width: 20%;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: baseline;
-  flex-wrap: nowrap;
+  font-size: 2rem;
+  padding-left: 10px;
 }
 
 .btn-four:hover{

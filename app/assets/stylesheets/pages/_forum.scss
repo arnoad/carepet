@@ -9,7 +9,8 @@
 }
 
 .post-date{
-  font-size: 8px;
+  font-size: 9px;
+  color: grey;
 }
 
 .user-name{
@@ -21,11 +22,12 @@
 }
 
 .description {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .category-post{
-  font-size: 8px;
+  font-size: 9px;
+  color: grey;
 }
 
 .picture-user{
@@ -33,12 +35,13 @@
   align-content: flex-end;
   flex-direction: row-reverse;
   justify-content: space-between;
+  padding-right: 2px;
 }
 
 .forum-thread{
   display: flex;
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
