@@ -1,6 +1,7 @@
 <% if pets.any? %>
   <% pets.each do |pet| %>
     <div id="pet-profile-card">
+    <%#= cl_image_tag pet.photo, class: "avatar-small" %>
       <strong><%= pet.pet_type %>: <%= pet.name %>, <%= pet.age %></strong>
         <p>Medical condition? <%= pet.medical_cond %></p>
         <p>Special needs? <%= pet.special_needs %></p>
