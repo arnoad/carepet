@@ -1,8 +1,17 @@
 class ForumsController < ApplicationController
 
   def index
-    @forums = Forum.all
+    if params[:category].present? && params[:city].present?
+      @forums = Forum.includes(:user).where(category: params[:category], users: { city: params[:city] })
+    elsif params[:category].present?
+      @forums = Forum.includes(:user).where(category: params[:category])
+    elsif params[:city].present?
+      @forums = Forum.includes(:user).joins(:user).where(users: { city: params[:city] })
+    else
+      @forums = Forum.all
+    end
   end
+
 
 
   def show
