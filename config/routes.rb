@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
     resources :carers, only: %i[index show] do
       resources :requests, only: %i[new create]
+      resources :reviews, only: %i[new create]
     end
 
     resources :requests, only: %i[index show edit update destroy]
@@ -29,8 +30,5 @@ Rails.application.routes.draw do
     resources :posts, only: %i[create]
   end
 
-  resources :users do
-    resources :reviews, only: %i[new create]
-  end
   resources :reviews, only: [:destroy]
 end

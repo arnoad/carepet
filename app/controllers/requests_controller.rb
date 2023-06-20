@@ -1,13 +1,11 @@
 class RequestsController < ApplicationController
 
   def index
-    current_user.requests = Request.all
     if current_user.carer?
       @requests = Request.where(carer: current_user)
     else
       @requests = Request.where(pet: current_user.pets)
     end
-
     @upcoming_requests = @requests.where("end_date >= ?", Date.today).order(end_date: :desc)
     @past_requests = @requests.where("end_date < ?", Date.today).order(end_date: :desc)
 
@@ -58,6 +56,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:status, :start_date, :end_date, :carers_home, :user_id, :pet_id, :price)
+    params.require(:request).permit(:status, :start_date, :end_date, :carers_home, :pet_id, :price)
   end
 end
