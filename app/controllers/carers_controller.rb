@@ -30,7 +30,9 @@ class CarersController < Devise::SessionsController
 
   end
 
-  def show; end
+  def show
+    @reviews = Review.all.where(carer_id: @carer)
+  end
 
   private
 

@@ -1,18 +1,19 @@
 class RequestsController < ApplicationController
 
   def index
-    # @current_user.requests = Request.all
+    current_user.requests = Request.all
     if current_user.carer?
       @requests = Request.where(carer: current_user)
     else
       @requests = Request.where(pet: current_user.pets)
     end
-    # @upcoming_requests = @requests.where("date >= ?", Date.today).order(date: :desc)
-    # @past_requests = @requests.where("date < ?", Date.today).order(date: :desc)
 
-    # @user_requests = Request.where(user: current_user.user)
-    # @user_upcoming_requests = @user_requests.where("date >= ?", Date.today).order(date: :desc)
-    # @user_past_requests = @user_requests.where("date < ?", Date.today).order(date: :desc)
+    @upcoming_requests = @requests.where("end_date >= ?", Date.today).order(end_date: :desc)
+    @past_requests = @requests.where("end_date < ?", Date.today).order(end_date: :desc)
+
+    @user_requests = Request.where(user: current_user)
+    @user_upcoming_requests = @user_requests.where("end_date >= ?", Date.today).order(end_date: :desc)
+    @user_past_requests = @user_requests.where("end_date < ?", Date.today).order(end_date: :desc)
     @user = current_user
   end
 

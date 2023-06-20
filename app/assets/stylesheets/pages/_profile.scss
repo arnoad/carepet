@@ -14,13 +14,13 @@
 .profile-avatar-info-title {
   font-size: 20px;
   font-weight: 900;
-  margin-left: 10px;
+  // margin-left: 10px;
 }
 
 .profile-avatar-info-text {
   font-size: 13px;
   font-weight: 600;
-  margin-left: 10px;
+  // margin-left: 10px;
 }
 
 .bio {
@@ -50,4 +50,18 @@
   position: absolute;
   right: 20px;
   top: 10px;
+}
+
+.reviews-avatar-info-title {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.reviews-avatar-date {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.request-info {
+  color: black;
 }

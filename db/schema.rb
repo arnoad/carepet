@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_19_103805) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_19_103832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_103805) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
@@ -106,6 +107,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_103805) do
     t.datetime "updated_at", null: false
     t.index ["pet_id"], name: "index_requests_on_pet_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "carer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carer_id"], name: "index_reviews_on_carer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -141,4 +152,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_103805) do
   add_foreign_key "posts", "users"
   add_foreign_key "requests", "pets"
   add_foreign_key "requests", "users"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "carer_id"
 end
