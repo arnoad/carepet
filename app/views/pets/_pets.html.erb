@@ -1,12 +1,15 @@
 <% if pets.any? %>
   <% pets.each do |pet| %>
-    <div id="pet-profile-card">
-    <%#= cl_image_tag pet.photo, class: "avatar-small" %>
-      <strong><%= pet.pet_type %>: <%= pet.name %>, <%= pet.age %></strong>
+    <div class="pet-profile-card">
+      <div class="pet-profile-card-avatar">
+        <%= cl_image_tag pet.photo.key, class: "avatar-medium" %>
+      </div>
+      <div class="pet-profile-card-info">
+        <strong><%= pet.pet_type %>: <%= pet.name %>, <%= pet.age %></strong>
         <p>Medical condition? <%= pet.medical_cond %></p>
         <p>Special needs? <%= pet.special_needs %></p>
+      </div>
       <div class="pet-delete-btn">
-        <%# <i class="fa-solid fa-trash-can"></i> %>
         <div>
           <%= button_to edit_pet_path(pet), method: :get, class: 'btn btn-primary btn-sm', style: 'background-color: transparent; border: none; display: inline-block;' do %>
           <i class="fas fa-edit" style="color: black;"></i>
