@@ -31,14 +31,14 @@
   margin-top: 30px;
 }
 
-#pet-profile-card {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 10px;
-  height: 100px;
-  margin-top: 20px;
-  position: relative;
-}
+// #pet-profile-card {
+//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+//   border-radius: 8px;
+//   padding: 10px;
+//   height: 100px;
+//   margin-top: 20px;
+//   position: relative;
+// }
 
 .profile-buttons {
   display: flex;
@@ -48,8 +48,8 @@
 
 .pet-delete-btn {
   position: absolute;
-  right: 20px;
-  top: 10px;
+  right: 5px;
+  top: 5px;
 }
 
 .reviews-avatar-info-title {
