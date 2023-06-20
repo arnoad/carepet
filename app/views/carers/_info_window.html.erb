@@ -1,7 +1,14 @@
 <h6><%= link_to carer_path(carer), style: "text-decoration: none;" do %></h6>
   <div>
-    <%= cl_image_tag carer.photo.key, class: "avatar-small" %>
-    <%= carer.full_name %>
-    <p><%= carer.address %></p>
+    <div class="pict-rat-window">
+      <% if carer.photo.present? %>
+        <%= cl_image_tag carer.photo.key, class: "avatar-small" %>
+      <% end%>
+    </div>
+    <div class="text-window">
+      <p><i class="fa-solid fa-user"></i> <%= carer.full_name %>, <%= carer.age %></p>
+      <p><i class="fa-solid fa-location-dot"></i> <%= carer.address %></p>
+      <p><i class="fa-solid fa-house"></i> <%= carer.house_type %></p>
+    </div>
   </div>
 <% end %>
