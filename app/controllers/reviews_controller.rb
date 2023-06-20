@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.carer = @carer
     @review.user = current_user
     if @review.save
-      redirect_to user_path(@carer)
+      redirect_to carer_path(@carer)
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,16 +19,16 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to user_path(@review.user), status: :see_other
+    redirect_to carer_path(@review.carer), status: :see_other
   end
 
   private
 
   def set_user
-    @carer = User.find(params[:user_id])
+    @carer = User.find(params[:carer_id])
   end
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :rating)
   end
 end

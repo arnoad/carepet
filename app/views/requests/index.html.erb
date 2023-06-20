@@ -1,30 +1,39 @@
 <div class='m-3'>
-  <h3 class="request-info">Upcoming Requests</h3>
+  <h5 class="request-info">Upcoming Requests</h5>
+
     <% if @user.carer? %> <%# carer view %>
       <% if @upcoming_requests.empty? %>
         <p>No upcoming requests.</p>
       <% else %>
         <% @upcoming_requests.each do |request| %>
-          <%= render 'request_for_carer', request: request %>
+          <%= render 'upcoming_request_for_carer', request: request %>
         <% end %>
       <% end %>
       <br>
-        <h3 class="request-info">Past Requests</h3>
+        <h5 class="request-info">Past Requests</h5>
         <% if @past_requests.empty? %>
           <p>No past requests.</p>
         <% else %>
           <% @past_requests.each do |request| %>
-            <%= render 'request_for_carer', request: request %>
+            <%= render 'past_request_for_carer', request: request %>
           <% end %>
         <% end %>
 
     <% else %> <%# user view %>
-      <% if @requests.empty? %>
+      <% if @upcoming_requests.empty? %>
         <p>No upcoming requests.</p>
       <% else %>
-        <% @requests.each do |request| %>
-          <%= render 'request_for_pet_owner', request: request %>
+        <% @upcoming_requests.each do |request| %>
+          <%= render 'upcoming_request_for_pet_owner', request: request %>
         <% end %>
       <% end %>
+        <h5 class="request-info">Past Requests</h5>
+        <% if @past_requests.empty? %>
+          <p>No past requests.</p>
+        <% else %>
+          <% @past_requests.each do |request| %>
+            <%= render 'past_request_for_pet_owner', request: request, carer: request.carer %>
+          <% end %>
+        <% end %>
     <% end %>
 </div>
