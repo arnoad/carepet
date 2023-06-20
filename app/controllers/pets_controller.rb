@@ -26,7 +26,7 @@ class PetsController < ApplicationController
 
   def update
     if @pet.update(pet_params)
-      redirect_to @pet, flash: { success: 'Details was successfully updated.' }
+      redirect_to profile_path, flash: { success: 'Details was successfully updated.' }
     else
       render :edit, status: :unprocessable_entity
     end
@@ -44,6 +44,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :pet_type, :breed, :medical_cond, :special_needs)
+    params.require(:pet).permit(:name, :age, :pet_type, :breed, :medical_cond, :special_needs, :photo)
   end
 end

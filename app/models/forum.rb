@@ -4,4 +4,5 @@ class Forum < ApplicationRecord
 
   validates :title, presence: true
   validates :category, presence: true
+  validates :description, presence: true, length: { maximum: 42 }
 end

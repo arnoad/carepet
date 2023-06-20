@@ -1,28 +1,57 @@
-
 <div class="main-box">
   <h4 class="find-banner">Join The Discussion</h4>
 
-    <% @forums.each do |forum|%>
-     <div class="forum-thread">
-        <div class="user-info-thread">
-          <div class="picture-user">
-            <% if forum.user.photo.attached? %>
-              <%= cl_image_tag forum.user.photo.key, class: "card-user-img round-image" %>
-            <% else %>
-              <%= image_tag "Will-Smith.jpg", class: "card-user-img round-image" %>
-            <% end %>
-          </div>
-        </div>
-          <div class="topic-info">
-            <p class="post-date"><em><%= forum.created_at.strftime("%d/%m/%Y %H:%M:%S") %> - <%= forum.category%></em></p>
-            <p class="user-name"><strong><%= forum.user.full_name%></strong> - <strong><%=forum.title %>:</strong></p>
-            <p class="description"><em><%=forum.description %></em></p>
-          </div>
-         <div class="icons">
-            <i class="far fa-heart"></i>
-            <%= link_to forum_path(forum.id), class: "forum-link" do %>
-              <i class="far fa-comment"></i>
-            <% end %>
+  <!-- Search and Add -->
+  <div class="search-or-add">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: forums_path, method: :get, class: "d-flex" do |f| %>
+          <%= f.select :category, options_for_select([["Category", ""], "Pet Adoption", "Pet Care", "Pet Services",
+            "Pet Competitions", "Pet Events", "Pet Food", "Pet Toys"], selected: params[:category]),
+            {}, class: "form-control transparent-input", placeholder: "Category" %>
+          <%= f.text_field :city, value: params[:city], class: "form-control transparent-input", placeholder: "City" %>
+          <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
+
+    <div class="add-circle">
+      <%= link_to new_forum_path, class: "fa-solid fa-circle-plus", style: "text-decoration: none;" do %>
+        <!-- Add any desired content inside the link_to block -->
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Forum threads -->
+  <% @forums.each do |forum| %>
+    <div class="forum-thread" onclick="window.location='<%= forum_path(forum.id) %>'">
+      <div class="user-info-thread">
+        <div class="picture-user">
+          <% if forum.user.photo.attached? %>
+            <%= cl_image_tag forum.user.photo.key, class: "card-user-img round-image" %>
+          <% else %>
+            <%= image_tag "Will-Smith.jpg", class: "card-user-img round-image" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="topic-info">
+        <p class="post-date">
+          <em><%= forum.created_at.strftime("%d/%m/%Y %H:%M:%S") %> - <%= forum.category %></em>
+        </p>
+        <p class="user-name">
+          <strong><%= forum.user.full_name %></strong> - <strong><%= forum.title %>:</strong>
+        </p>
+        <p class="description">
+          <em><%= forum.description %></em>
+        </p>
+      </div>
+      <div class="icons">
+        <%= link_to forum_path(forum.id), class: "forum-link" do %>
+          <i class="far fa-comment"></i>
+        <% end %>
+      </div>
+    </div>
+    <br>
+  <% end %>
 </div>
