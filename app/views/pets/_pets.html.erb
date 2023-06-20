@@ -2,12 +2,16 @@
   <% pets.each do |pet| %>
     <div class="pet-profile-card">
       <div class="pet-profile-card-avatar">
-        <%= cl_image_tag pet.photo.key, class: "avatar-medium" %>
+        <% if pet.photo.attached? %>
+          <%= cl_image_tag pet.photo.key, class: "avatar-medium" %>
+        <% else %>
+          <%= image_tag "default_pet.png", class: "avatar-medium" %>
+        <% end %>
       </div>
       <div class="pet-profile-card-info">
-        <strong><%= pet.pet_type %>: <%= pet.name %>, <%= pet.age %></strong>
-        <p>Medical condition? <%= pet.medical_cond %></p>
-        <p>Special needs? <%= pet.special_needs %></p>
+        <strong><%= pet.pet_type %>:</strong> <%= pet.name %>, <%= pet.age %>
+        <p><strong>Medical condition?</strong> <%= pet.medical_cond %></p>
+        <p><strong>Special needs?</strong> <%= pet.special_needs %></p>
       </div>
       <div class="pet-delete-btn">
         <div>
