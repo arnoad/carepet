@@ -1,11 +1,11 @@
 <%= simple_form_for forum do |f| %>
     <%= f.input :title %>
-    <%= f.input :category, as: :radio_buttons, collection: ['Pet Adoption', 'Pet Care', 'Pet Services', 'Pet Competitions', 'Pet Events', 'Pet Food', 'Pet Toys'],
+    <%= f.input :description %>
+     <%= f.input :category, as: :radio_buttons, collection: ['Pet Adoption', 'Pet Care', 'Pet Services', 'Pet Competitions', 'Pet Events', 'Pet Food', 'Pet Toys'],
                   input_html: { class: 'tag-selector', autocomplete: "category" },
                   item_wrapper_class: 'tag-item',
                   required: true,
                   autofocus: true %>
-    <%= f.input :description %>
     <%= f.submit class: 'btn-one', style: 'border: none; background-color: $blue-strong; color: white; text-decoration: none; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 10px;', value: "SAVE" %>
   <% end %>
   <div class="profile-buttons">

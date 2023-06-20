@@ -68,3 +68,27 @@
   padding-right: 10px;
   color: #2892A4;
 }
+
+.add-circle{
+  position: absolute;
+  bottom: 600px;
+  right: 20px;
+}
+
+.add-circle {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  font-size: 40px;
+  /* Add any additional styles for the button */
+}
+
+#category{
+  font-size: 13px;
+  color: grey;
+}
+
+#city{
+  font-size: 13px;
+  color: grey;
+}
