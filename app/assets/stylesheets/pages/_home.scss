@@ -13,27 +13,19 @@
 
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   margin-left: 10px;
-}
-
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 50%;
 }
 
 
 .card-product p {
   font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
+  color: black;
+  margin-bottom: 16px;
 }
-
-
-
 
 .card-product .card-product-infos {
   display: flex;
@@ -68,4 +60,22 @@
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
+}
+
+
+.map-view-button{
+  margin-bottom: 10px;
+}
+
+.card-info-text h6 {
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 16px;
+}
+
+.avg-rating {
+  height: 100%;
+  position: absolute;
+  right: 25px;
+  padding-top: 5px;
 }

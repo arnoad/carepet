@@ -8,8 +8,10 @@ export default class extends Controller {
     console.log(this.mapSectionTarget)
 
     // Get the mapTab and listTab elements
-    const mapTab = document.querySelector('.fa-location-dot');
-    const listTab = document.querySelector('.fa-list-ul');
+    //const mapTab = document.querySelector('.fa-location-dot');
+    //const listTab = document.querySelector('.fa-list-ul');
+    const mapTab = document.querySelector('.map-view-button');
+    const listTab = document.querySelector('.list-view-button');
 
     this.showMapView();
   }
@@ -17,6 +19,7 @@ export default class extends Controller {
   showMapView() {
     this.mapSectionTarget.style.display = "block";
     this.listSectionTarget.style.display = "none";
+    this.lisTab
   }
 
   showListView() {
