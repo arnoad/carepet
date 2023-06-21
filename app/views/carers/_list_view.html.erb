@@ -30,8 +30,9 @@
               <% end %>
             </div>
             <div class="card-info-text">
-              <h6><%= link_to carer.full_name, carer_path(carer), style: "text-decoration: none;" %></h6>
-              <p class="address"><strong>Address:</strong> <%= carer.address %></p>
+              <h6><i class="fa-solid fa-user"></i> <%= carer.full_name %>, <%= carer.age %></h6>
+              <p><i class="fa-solid fa-location-dot"></i> <%= carer.address %></p>
+              <p><i class="fa-solid fa-house"></i> <%= carer.house_type %></p>
             </div>
           </div>
           <% end %>
