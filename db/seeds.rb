@@ -41,7 +41,7 @@ puts 'Pets created...'
 
 puts 'Create requests...'
 
-Request.create!(status: 'pending', start_date: '2023-08-01', end_date: '2023-08-03', carers_home: true, carer: stan, pet: pet, price: 15)
+Request.create!(status: 'Pending', start_date: '2023-08-01', end_date: '2023-08-03', carers_home: true, carer: stan, pet: pet, price: 15)
 
 puts "Create forum"
 forum1 = Forum.create!(title: 'Concerned about my cat', category: 'Pet Care', description: 'my cat, Tempo, is not eating nor sleeping', user: rick)

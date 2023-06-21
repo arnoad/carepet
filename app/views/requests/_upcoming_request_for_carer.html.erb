@@ -27,7 +27,7 @@
   </div>
 
     <div class="profile-buttons">
-      <%= button_to "ACCEPT", request_path(request, request: { status: 'Accepted'}), method: :patch, class: "btn-one", style: "border: none;" %>
+      <%= button_to "ACCEPT", request_path(request, request: { status: 'Accepted'}), method: :patch, class: "btn-one" style: "border: none;" %>
       <%= button_to "REJECT", request_path(request, request: { status: 'Rejected'}), method: :patch, class: "btn-two", data: { turbo_confirm: 'Are you sure you want to reject this booking?' } %>
     </div>
 </div>
