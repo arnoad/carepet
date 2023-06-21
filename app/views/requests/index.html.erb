@@ -1,5 +1,7 @@
 <div class='m-3'>
-  <h5 class="request-info">Upcoming Requests</h5>
+  <div class="head-banner">
+    <h1 class="request-info">Upcoming Requests</h1>
+  </div>
 
     <% if @user.carer? %> <%# carer view %>
       <% if @upcoming_requests.empty? %>
@@ -10,7 +12,9 @@
         <% end %>
       <% end %>
       <br>
-        <h5 class="request-info">Past Requests</h5>
+        <div class="head-banner">
+          <h1 class="request-info">Past Requests</h1>
+        </div>
         <% if @past_requests.empty? %>
           <p>No past requests.</p>
         <% else %>

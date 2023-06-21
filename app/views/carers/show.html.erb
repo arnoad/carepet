@@ -1,9 +1,13 @@
-<div class="requests-box">
-  <h1><%= @carer.full_name %>'s profile</h1>
+<div class="m-3">
+  <div class="head-banner">
+    <h1><%= @carer.full_name %>'s profile</h1>
+  </div>
   <div class="profile-card">
     <div class="profile-avatar-info">
       <div>
+       <% if @carer.photo.present? %>
         <%= cl_image_tag @carer.photo.key, class: "avatar-profile" %>
+      <% end%>
       </div>
       <div>
         <div class="profile-avatar-info-title">
@@ -12,20 +16,19 @@
         <div class="profile-avatar-info-text">
           <p><i class="fa-solid fa-location-dot"></i> <%= @carer.address %></p>
           <p><i class="fa-solid fa-house"></i> <%= @carer.house_type %></p>
-          <p><i class="fa-solid fa-star"></i>
             <% avg_sum = 0 %>
             <% avg_sum %>
             <% @reviews.size %>
               <% @reviews.each do |review| %>
-              <% avg_sum += review.rating %>
+                <% avg_sum += review.rating %>
               <% end %>
             <% avg_sum %>
-              <% if @reviews.count > 0 %>
+            <% if @reviews.count > 0 %>
               <% avg_rating = avg_sum / @reviews.count %>
-              <%= avg_rating.round(2) %>
-              <% else %>
-              <p>This carer has no ratings yet.</p>
-              <% end %>
+              <p><i class="fa-solid fa-star"></i> <%= @avg_rating.round(2)%></p>
+            <% else %>
+              <p><i class="fa-solid fa-star"></i> No Ratings Yet.</p>
+            <% end %>
           </p>
         </div>
       </div>

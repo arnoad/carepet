@@ -50,7 +50,6 @@
 .forum-thread{
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid $blue-medium;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   vertical-align: top;
 }
@@ -69,12 +68,6 @@
   color: #2892A4;
 }
 
-.add-circle{
-  position: absolute;
-  bottom: 600px;
-  right: 20px;
-}
-
 .add-circle {
   position: fixed;
   bottom: 100px;
@@ -91,4 +84,8 @@
 #city{
   font-size: 13px;
   color: grey;
+}
+
+.search-or-add{
+  margin-bottom: 20px;
 }
