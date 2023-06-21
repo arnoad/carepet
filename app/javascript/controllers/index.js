@@ -15,3 +15,9 @@ application.register("map", MapController)
 
 import ViewToggleController from "./view_toggle_controller"
 application.register("view-toggle", ViewToggleController)
+
+const button = document.querySelector("#click-me")
+button.addEventListener("click", (event) => {
+  event.currentTarget.innerText = "Accepted"
+  event.currentTarget.setAttribute("disabled", "")
+})
