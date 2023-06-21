@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DisableBtnController from "./disable_btn_controller"
+application.register("disable-btn", DisableBtnController)
+
 import ForumSubscriptionController from "./forum_subscription_controller"
 application.register("forum-subscription", ForumSubscriptionController)
 

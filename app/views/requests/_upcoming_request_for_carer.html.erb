@@ -20,14 +20,20 @@
           <p><%= request.start_date.strftime("%d/%m/%Y") %></p>
           <p><%= request.end_date.strftime("%d/%m/%Y") %></p>
           <p><%= request.pet.pet_type %>: <%= request.pet.name %></p>
-          <p><%= request.status %></p>
+          <% if request.status == 'Accepted' %>
+            <p class="badge badge-success"><%= request.status %></p>
+          <% elsif request.status == 'Rejected' %>
+            <p class="badge badge-danger"><%= request.status %></p>
+          <% else %>
+            <p class="badge"><%= request.status %></p>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
 
-    <div class="profile-buttons">
-      <%= button_to "ACCEPT", request_path(request, request: { status: 'Accepted'}), method: :patch, class: "btn-one" style: "border: none;" %>
-      <%= button_to "REJECT", request_path(request, request: { status: 'Rejected'}), method: :patch, class: "btn-two", data: { turbo_confirm: 'Are you sure you want to reject this booking?' } %>
+    <div class="profile-buttons" data-controller='disable-btn'>
+      <%= link_to "ACCEPT", request_path(request, request: { status: 'Accepted'}), data: { turbo_method: :patch, disable_btn_target: 'btn', action: 'click->disable-btn#disable' }, class: "btn-one", style: "border: none;" %>
+      <%= link_to "REJECT", request_path(request, request: { status: 'Rejected'}), data: { turbo_method: :patch, turbo_confirm: 'Are you sure you want to reject this booking?', disable_btn_target: 'btn', action: 'click->disable-btn#disable' }, class: "btn-two" %>
     </div>
 </div>
