@@ -1,6 +1,7 @@
 class Request < ApplicationRecord
   belongs_to :carer, class_name: 'User', foreign_key: :user_id
   belongs_to :pet
+  belongs_to :user
 
   before_validation :set_default_status
   validates :start_date, presence: true

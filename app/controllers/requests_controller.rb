@@ -13,6 +13,8 @@ class RequestsController < ApplicationController
     @user_upcoming_requests = @user_requests.where("end_date >= ?", Date.today).order(end_date: :desc)
     @user_past_requests = @user_requests.where("end_date < ?", Date.today).order(end_date: :desc)
     @user = current_user
+
+    @user_requests_sent = Request.joins(pet: :user).where(users: { id: current_user.id })
   end
 
   def new
