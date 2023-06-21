@@ -20,13 +20,11 @@ data-forum-subscription-forum-id-value="<%=@forum.id%>">
           label: false,
           placeholder: "Reply...",
           wrapper_html: {class: "flex-grow-1"} %>
-      </div>
-      <div>
-        <%= button_tag(type: 'submit', class: 'btn btn-four mb-3') do %>
-          <i class="fa-regular fa-square-caret-right"></i>
-        <% end %>
-      </div>
-    <% end %>
+          <div>
+            <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+          </div>
+      <% end %>
+    </div>
   </div>
 <br>
 <br>
