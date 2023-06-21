@@ -6,9 +6,7 @@
   text-align: left;
   font-family: "Raleway", sans-serif;
   width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
+  border-radius: 8px;
 
 }
 
@@ -19,4 +17,10 @@
 
 .map-carers{
   margin-bottom: 10px;
+}
+
+.avg-rating-map{
+  position: absolute;
+  right: 25px;
+  top: 10px;
 }

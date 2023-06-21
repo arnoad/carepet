@@ -30,9 +30,23 @@
               <% end %>
             </div>
             <div class="card-info-text">
-              <h6><i class="fa-solid fa-user"></i> <%= carer.full_name %>, <%= carer.age %></h6>
-              <p><i class="fa-solid fa-location-dot"></i> <%= carer.address %></p>
-              <p><i class="fa-solid fa-house"></i> <%= carer.house_type %></p>
+              <div class= "avg-rating">
+              <!-- Raquel's code for avg. rating -->
+                <% avg_sum = 0 %>
+                    <% @reviews.each do |review| %>
+                      <% avg_sum += review.rating %>
+                    <% end %>
+                  <% if @reviews.count > 0 %>
+                    <% avg_rating = avg_sum / @reviews.count %>
+                    <p><i class="fa-solid fa-star"></i> <%= @avg_rating.round(2)%></p>
+                  <% else %>
+                    <p><i class="fa-solid fa-star"></i> 0.0</p>
+                  <% end %>
+                  <!---->
+              </div>
+              <h6 class="user-text"><i class="fa-solid fa-user"></i> <%= carer.full_name %>, <%= carer.age %></h6>
+              <p class="user-text"><i class="fa-solid fa-location-dot"></i> <%= carer.address %></p>
+              <p class="user-text"><i class="fa-solid fa-house"></i> <%= carer.house_type %></p>
             </div>
           </div>
           <% end %>

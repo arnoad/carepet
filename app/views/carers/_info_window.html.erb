@@ -5,6 +5,20 @@
         <%= cl_image_tag carer.photo.key, class: "avatar-small" %>
       <% end%>
     </div>
+    <div class= "avg-rating-map">
+      <!-- Raquel's code for avg. rating -->
+      <% avg_sum = 0 %>
+      <% @reviews.each do |review| %>
+        <% avg_sum += review.rating %>
+      <% end %>
+      <% if @reviews.count > 0 %>
+        <% avg_rating = avg_sum / @reviews.count %>
+        <p><i class="fa-solid fa-star"></i> <%= @avg_rating.round(2)%></p>
+      <% else %>
+        <p><i class="fa-solid fa-star"></i> 0.0</p>
+      <% end %>
+      <!---->
+    </div>
     <div class="text-window">
       <p><i class="fa-solid fa-user"></i> <%= carer.full_name %>, <%= carer.age %></p>
       <p><i class="fa-solid fa-location-dot"></i> <%= carer.address %></p>
