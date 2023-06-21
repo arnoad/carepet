@@ -1,0 +1,20 @@
+.badge {
+  padding: 2px 6px;
+  display: inline-block;
+  border-radius: 6px;
+  color: rgb(23, 23, 23);
+  background: rgb(216, 216, 216);
+  font-size: 12px;
+}
+
+.badge-success {
+  background: #d6ffd6;
+  color: rgb(8, 81, 8);
+  font-size: 12px;
+}
+
+.badge-danger {
+  background: #ffc0c0;
+  color: rgb(189, 6, 6);
+  font-size: 12px;
+}

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DisableBtnController from "./disable_btn_controller"
+application.register("disable-btn", DisableBtnController)
+
 import ForumSubscriptionController from "./forum_subscription_controller"
 application.register("forum-subscription", ForumSubscriptionController)
 
@@ -15,9 +18,3 @@ application.register("map", MapController)
 
 import ViewToggleController from "./view_toggle_controller"
 application.register("view-toggle", ViewToggleController)
-
-const button = document.querySelector("#click-me")
-button.addEventListener("click", (event) => {
-  event.currentTarget.innerText = "Accepted"
-  event.currentTarget.setAttribute("disabled", "")
-})
