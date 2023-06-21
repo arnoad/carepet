@@ -1,0 +1,5 @@
+meta_product_name: "CarePet"
+meta_title: "CarePet - The only App that cares for your best buddy"
+meta_description: "Want to enjoy a holiday without thinking about you pet? CarePet connects pet owners with carer near your area to watch out for you best buddy while your enjoying your trip."
+meta_image: "carepet_logo_for_meta.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"
