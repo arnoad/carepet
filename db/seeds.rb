@@ -75,6 +75,36 @@ maria = User.create!(full_name: 'Maria Gutierrez', address: "182, Dewar Terrace,
 maria.photo.attach(io: file, filename: "maria.png", content_type: "image/png")
 maria.save
 
+# ERIC
+file = URI.open("https://randomuser.me/api/portraits/men/98.jpg")
+eric = User.new(full_name: "Eric Cartman", address: "56 George Street, Sydney",city: "Sydney", bio: "Hey there! I'm Eric, a passionate animal lover and pet enthusiast. With years of experience in pet care, I'm thrilled to be part of this amazing pet sitting app. From dogs and cats to birds and reptiles, I've cared for a wide range of furry and feathery friends. As a responsible and attentive pet sitter, I understand the importance of providing love, companionship, and top-notch care for your beloved pets.", house_type: "Apartment", carer: true, age: 28, email: "eric@test.com," password: '123456')
+eric.photo.attach(io: file, filename: "eric.png", content_type: "image/png")
+eric.save
+
+# KYLE
+file = URI.open("https://randomuser.me/api/portraits/men/99.jpg")
+kyle = User.new(full_name: "Kyle Brovloski", address: "73 Pitt Street, Sydney",city: "Sydney", bio: "Hey, I'm Kyle, an avid animal enthusiast with a deep love for all creatures great and small. Joining this fantastic pet sitting app, I bring my genuine passion and commitment to providing exceptional care for your furry companions. With a keen understanding of various pet needs and behaviors, I have a track record of creating a comfortable and engaging environment for pets of all kinds.", house_type: "Apartment", carer: true, age: 26, email: "kyle@test.com", password: '123456')
+kyle.photo.attach(io: file, filename: "kyle.png", content_type: "image/png")
+kyle.save
+
+# MICHAEL
+file = URI.open("https://randomuser.me/api/portraits/men/67.jpg")
+michael = User.new(full_name: "Michael Schumacher", address: "42 Martin Place, Sydney",city: "Sydney", bio: "Hi there, I'm Michael, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 45, email: 'michael@test.com', password: '123456')
+michael.photo.attach(io: file, filename: "michael.png", content_type: "image/png")
+michael.save
+
+# ELENA
+file = URI.open("https://randomuser.me/api/portraits/women/67.jpg")
+elena = User.new(full_name: "Elena Stanley", address: "100 George Street, Sydney",city: "Sydney", bio: "Hi there, I'm Elena, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 42, email: 'elena@test.com', password: '123456')
+elena.photo.attach(io: file, filename: "elena.png", content_type: "image/png")
+elena.save
+
+# ELON
+file = URI.open("https://randomuser.me/api/portraits/men/68.jpg")
+elon = User.new(full_name: "Elon Mustard", address: "459 Pitt Street, Sydney",city: "Sydney", bio: "Hi there, I'm Elon, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 53, email: 'elon@test.com', password: '123456')
+elon.photo.attach(io: file, filename: "elon.png", content_type: "image/png")
+elon.save
+
 puts 'Users created !'
 
 # Rick's Pet
@@ -121,5 +151,7 @@ Post.create!(content: 'it could be due to the stress. Have you changed houses re
 puts "Create Review..."
 
 Review.create(content: "Stan was an amazing carer for Loonie. I would totally recommend him.", user: maria, carer: stan, rating: 5.0)
+Review.create(content: "Thank you for the caretaking. Will definitely book Stan again!", user: elena, carer: stan, rating: 4.0)
+Review.create(content: "Stan is super kind, my buddy was so happy.", user: eric, carer: stan, rating: 4.0)
 
 puts 'SEEDS DONE !'
