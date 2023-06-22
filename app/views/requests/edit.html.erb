@@ -1,6 +1,8 @@
-<div class="m-2">
+<div class="m-3">
   <%# = turbo_frame_tag "request_#{@request.id}" do  %> <%# Couldnt redirect to the right page with the turbo_frame so removed it - Arno %>
-    <h5> Edit your request to <%= @request.carer.full_name %> </h5>
+  <div class="head-banner">
+    <h1> Edit your request to <%= @request.carer.full_name %> </h1>
+  </div>
     <%= simple_form_for(@request) do |f| %>
       <%= f.input :start_date, order: [:day, :month, :year] %>
       <%= f.input :end_date, order: [:day, :month, :year] %>

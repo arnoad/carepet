@@ -2,8 +2,8 @@
   <div class="profile-card">
     <div class="profile-avatar-info">
       <div>
-        <% if request.carer.photo.attached? %>
-            <%= cl_image_tag request.pet.user.photo.key, class: "avatar-profile" %>
+        <% if request.user.photo.attached? %>
+            <%= cl_image_tag request.user.photo.key, class: "avatar-profile" %>
         <% else %>
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -16,7 +16,7 @@
       <%= turbo_frame_tag "request_#{request.id}" do %>
         <div class="profile-avatar-info-title">
           <div class="profile-avatar-info-text">
-          <p><strong>Carer: </strong><%= request.pet.user.full_name %>.</p>
+          <p><strong>Carer: </strong><%= request.user.full_name %>.</p>
           <p><strong>From: </strong><%= request.start_date.strftime("%d/%m/%Y") %>.</p>
           <p><strong>To: </strong><%= request.end_date.strftime("%d/%m/%Y") %>.</p>
           <p><strong>Pet: </strong><%= request.pet.pet_type %> - <%= request.pet.name %>.</p>
@@ -26,10 +26,6 @@
       <% end %>
     </div>
     <div class="profile-buttons">
-      <% if @user.carer?%>
-        <% if @past_requests.any? %>
-        <%= link_to "Give a review to " + request.pet.user.full_name, new_carer_review_path(request.pet.user), class: "btn-two" %>
-        <%end%>
-      <%end%>
+        <%= link_to "Give a review to " + request.user.full_name, new_carer_review_path(request.user), class: "btn-two" %>
     </div>
 </div>

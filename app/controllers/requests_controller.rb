@@ -1,21 +1,25 @@
 class RequestsController < ApplicationController
-
   def index
     if current_user.carer?
       @requests = Request.where(carer: current_user)
     else
       @requests = Request.where(pet: current_user.pets)
     end
+
     @upcoming_requests = @requests.where("end_date >= ?", Date.today).order(end_date: :desc)
     @past_requests = @requests.where("end_date < ?", Date.today).order(end_date: :desc)
 
     @user_requests = Request.where(user: current_user)
     @user_upcoming_requests = @user_requests.where("end_date >= ?", Date.today).order(end_date: :desc)
     @user_past_requests = @user_requests.where("end_date < ?", Date.today).order(end_date: :desc)
+
     @user = current_user
 
     @user_requests_sent = Request.joins(pet: :user).where(users: { id: current_user.id })
+    @user_requests_sent_upcoming = @user_requests_sent.where("end_date >= ?", Date.today).order(end_date: :asc)
+    @user_requests_sent_past = @user_requests_sent.where("end_date < ?", Date.today).order(end_date: :desc)
   end
+
 
   def new
     @carer = User.find(params[:carer_id])
