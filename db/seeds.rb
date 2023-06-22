@@ -77,7 +77,7 @@ maria.save
 
 # ERIC
 file = URI.open("https://randomuser.me/api/portraits/men/98.jpg")
-eric = User.new(full_name: "Eric Cartman", address: "56 George Street, Sydney",city: "Sydney", bio: "Hey there! I'm Eric, a passionate animal lover and pet enthusiast. With years of experience in pet care, I'm thrilled to be part of this amazing pet sitting app. From dogs and cats to birds and reptiles, I've cared for a wide range of furry and feathery friends. As a responsible and attentive pet sitter, I understand the importance of providing love, companionship, and top-notch care for your beloved pets.", house_type: "Apartment", carer: true, age: 28, email: "eric@test.com," password: '123456')
+eric = User.new(full_name: "Eric Cartman", address: "56 George Street, Sydney",city: "Sydney", bio: "Hey there! I'm Eric, a passionate animal lover and pet enthusiast. With years of experience in pet care, I'm thrilled to be part of this amazing pet sitting app. From dogs and cats to birds and reptiles, I've cared for a wide range of furry and feathery friends. As a responsible and attentive pet sitter, I understand the importance of providing love, companionship, and top-notch care for your beloved pets.", house_type: "Apartment", carer: true, age: 28, email: "eric@test.com,", password: '123456')
 eric.photo.attach(io: file, filename: "eric.png", content_type: "image/png")
 eric.save
 
@@ -104,6 +104,18 @@ file = URI.open("https://randomuser.me/api/portraits/men/68.jpg")
 elon = User.new(full_name: "Elon Mustard", address: "459 Pitt Street, Sydney",city: "Sydney", bio: "Hi there, I'm Elon, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 53, email: 'elon@test.com', password: '123456')
 elon.photo.attach(io: file, filename: "elon.png", content_type: "image/png")
 elon.save
+
+# Brice
+file = URI.open("https://randomuser.me/api/portraits/men/69.jpg")
+brice = User.new(full_name: "Brice Walmart", address: "25 Hunter Street, Newcastle",city: "Newcastle", bio: "Hi there, I'm Brice, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 53, email: 'brice@test.com', password: '123456')
+brice.photo.attach(io: file, filename: "brice.png", content_type: "image/png")
+brice.save
+
+# Genevieve
+file = URI.open("https://randomuser.me/api/portraits/women/68.jpg")
+genevieve = User.new(full_name: "Genevieve Singer", address: "54 King Street, Newcastle",city: "Newcastle", bio: "Hi there, I'm Genevieve, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 53, email: 'genevieve@test.com', password: '123456')
+genevieve.photo.attach(io: file, filename: "genevieve.png", content_type: "image/png")
+genevieve.save
 
 puts 'Users created !'
 
@@ -151,7 +163,10 @@ Post.create!(content: 'it could be due to the stress. Have you changed houses re
 puts "Create Review..."
 
 Review.create(content: "Stan was an amazing carer for Loonie. I would totally recommend him.", user: maria, carer: stan, rating: 5.0)
-Review.create(content: "Thank you for the caretaking. Will definitely book Stan again!", user: elena, carer: stan, rating: 4.0)
-Review.create(content: "Stan is super kind, my buddy was so happy.", user: eric, carer: stan, rating: 4.0)
+Review.create(content: "Stan is pawsome! Trustworthy and caring pet sitter.", user: genevieve, carer: stan, rating: 5.0)
+Review.create(content: "Thank you for the caretaking. Will definitely book Stan again!", user: brice, carer: stan, rating: 4.0)
+Review.create(content: "Stan is a pet whisperer. Our dog loves him!", user: rob, carer: stan, rating: 4.0)
+Review.create(content: "Stan is a gem. Our dog jumps with joy when he visits!", user: elon, carer: stan, rating: 5.0)
+Review.create(content: "Reliable and attentive, Stan keeps pets happy and content.", user: aira, carer: stan, rating: 4.0)
 
 puts 'SEEDS DONE !'
