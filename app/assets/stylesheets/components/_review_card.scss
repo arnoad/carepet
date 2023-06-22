@@ -1,3 +1,55 @@
+.review-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.review-card-info {
+  padding: 16px;
+}
+
+.review-card-info p {
+  margin: 0px;
+}
+
+.reviews-avatar-date {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.reviews-avatar-date p {
+  margin-bottom: 10px;
+}
+
+.delete-symbol {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.reviews-avatar-info {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.reviews-avatar-info-title {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.reviews-avatar-date {
+  font-size: 10px;
+  font-weight: 400;
+}
+
 .review-profile-card {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
@@ -22,8 +74,6 @@
 }
 
 .review-avatar-info-text p {
-  margin-bottom: 0px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 10px;
+  margin-left: 6px;
+  margin-top: 7px;
 }
