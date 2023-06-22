@@ -1,0 +1,39 @@
+<div class="profile-card">
+  <div class="profile-avatar-info">
+    <div>
+      <% if request.carer.photo.attached? %>
+          <%= cl_image_tag request.pet.user.photo.key, class: "avatar-profile" %>
+      <% else %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+          <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+          <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
+        </svg>
+      <% end %>
+    </div>
+    <%= turbo_frame_tag "request_#{request.id}" do %>
+      <div class="profile-avatar-info-title">
+        <div class="profile-avatar-info-text">
+        <p><i class="fa-solid fa-user"></i> <%= request.pet.user.full_name %></p>
+          <p><strong>From: </strong><%= request.start_date.strftime("%d/%m/%Y") %></p>
+          <p><strong>To: </strong><%= request.end_date.strftime("%d/%m/%Y") %></p>
+          <p><strong>Pet: </strong><%= request.pet.pet_type %>, Name: <%= request.pet.name %></p>
+          <p><strong>Price: </strong>$<%= request.price %></p>
+          <% if request.status == 'Accepted' %>
+            <p class="badge badge-success"><strong>Status: </strong><%= request.status %></p>
+          <% elsif request.status == 'Rejected' %>
+            <p class="badge badge-danger"><strong>Status: </strong><%= request.status %></p>
+          <% else %>
+            <p class="badge badge-light"><strong>Status: </strong><%= request.status %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+    <div class="profile-buttons" data-controller='disable-btn'>
+      <%= link_to "ACCEPT", request_path(request, request: { status: 'Accepted'}), data: { turbo_method: :patch, disable_btn_target: 'btn', action: 'click->disable-btn#disable' }, class: "btn-one", style: "border: none;" %>
+      <%= link_to "REJECT", request_path(request, request: { status: 'Rejected'}), data: { turbo_method: :patch, turbo_confirm: 'Are you sure you want to reject this booking?', disable_btn_target: 'btn', action: 'click->disable-btn#disable' }, class: "btn-two" %>
+    </div>
+</div>
