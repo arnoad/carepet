@@ -2,9 +2,16 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["mapSection", "listSection"];
+  static values = {
+    showList: {
+      type: Boolean,
+      default: false,
+    },
+  }
 
   connect() {
     console.log("Hey yo")
+    console.log(this.showMapValue)
     console.log(this.mapSectionTarget)
 
     // Get the mapTab and listTab elements
@@ -13,7 +20,11 @@ export default class extends Controller {
     const mapTab = document.querySelector('.map-view-button');
     const listTab = document.querySelector('.list-view-button');
 
-    this.showMapView();
+    if (this.showListValue) {
+      this.showListView();
+    } else {
+      this.showMapView();
+    }
   }
 
   showMapView() {

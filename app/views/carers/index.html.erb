@@ -1,4 +1,4 @@
-<div class="m-3" data-controller="view-toggle">
+<div class="m-3" data-controller="view-toggle" data-view-toggle-show-list-value="<%= params[:show_list] == 'true' %>">
   <div data-view-toggle-target="mapSection">
     <%= render 'map_view', markers: @markers %>
   </div>

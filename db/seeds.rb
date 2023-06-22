@@ -89,7 +89,7 @@ kyle.save
 
 # MICHAEL
 file = URI.open("https://randomuser.me/api/portraits/men/67.jpg")
-michael = User.new(full_name: "Michael Schumacher", address: "42 Martin Place, Sydney",city: "Sydney", bio: "Hi there, I'm Michael, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 45, email: 'michael@test.com', password: '123456')
+michael = User.new(full_name: "Michael Schumi", address: "42 Martin Place, Sydney",city: "Sydney", bio: "Hi there, I'm Michael, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 45, email: 'michael@test.com', password: '123456')
 michael.photo.attach(io: file, filename: "michael.png", content_type: "image/png")
 michael.save
 
