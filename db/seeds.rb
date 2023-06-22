@@ -169,4 +169,14 @@ Review.create(content: "Stan is a pet whisperer. Our dog loves him!", user: rob,
 Review.create(content: "Stan is a gem. Our dog jumps with joy when he visits!", user: elon, carer: stan, rating: 5.0)
 Review.create(content: "Reliable and attentive, Stan keeps pets happy and content.", user: aira, carer: stan, rating: 4.0)
 
+Review.create(content: "Nice!", user: aira, carer: beth, rating: 4.0)
+# Review.create(content: "Nice!", user: eric, carer: rob, rating: 3.0)
+Review.create(content: "Nice!", user: maria, carer: rick, rating: 4.0)
+Review.create(content: "Nice!", user: elon, carer: ben, rating: 4.0)
+Review.create(content: "Nice!", user: ben, carer: aira, rating: 3.0)
+Review.create(content: "Nice!", user: aira, carer: sophie, rating: 5.0)
+Review.create(content: "Nice!", user: sophie, carer: kyle, rating: 4.0)
+Review.create(content: "Ok!", user: aira, carer: michael, rating: 2.0)
+Review.create(content: "Nice!", user: aira, carer: elena, rating: 4.0)
+
 puts 'SEEDS DONE !'
