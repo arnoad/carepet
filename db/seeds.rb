@@ -75,17 +75,11 @@ maria = User.create!(full_name: 'Maria Gutierrez', address: "182, Dewar Terrace,
 maria.photo.attach(io: file, filename: "maria.png", content_type: "image/png")
 maria.save
 
-# Paula Gonzalez
+# Laurs Castell
 file = URI.open("https://randomuser.me/api/portraits/women/54.jpg")
 laura = User.create!(full_name: 'Laura Castell', address: "64 Milsom St, Brisbane",city: 'Brisbane', bio: "Hello everyone! I am Laura. Moved to Australia IN 2017 as an au pair and felt in love with the country. So, I dediced to stay a little longer. I am usually busy studying my master and socialising with friends", house_type: 'Apartment', carer: true, age: 31, email: 'laura@test.com', password: '123456')
 laura.photo.attach(io: file, filename: "laura.png", content_type: "image/png")
 laura.save
-
-# ERIC
-file = URI.open("https://randomuser.me/api/portraits/men/98.jpg")
-eric = User.new(full_name: "Eric Cartman", address: "56 George Street, Sydney",city: "Sydney", bio: "Hey there! I'm Eric, a passionate animal lover and pet enthusiast. With years of experience in pet care, I'm thrilled to be part of this amazing pet sitting app. From dogs and cats to birds and reptiles, I've cared for a wide range of furry and feathery friends. As a responsible and attentive pet sitter, I understand the importance of providing love, companionship, and top-notch care for your beloved pets.", house_type: "Apartment", carer: true, age: 28, email: "eric@test.com,", password: '123456')
-eric.photo.attach(io: file, filename: "eric.png", content_type: "image/png")
-eric.save
 
 # KYLE
 file = URI.open("https://randomuser.me/api/portraits/men/99.jpg")
@@ -164,15 +158,25 @@ puts 'Pets created...'
 
 puts 'Create requests...'
 
-Request.create!(status: 'Pending', start_date: '2023-08-01', end_date: '2023-08-03', carers_home: true, carer: stan, pet: pet, price: 15)
+Request.create!(status: 'Pending', start_date: '2023-08-24', end_date: '2023-08-26', carers_home: true, carer: laura, pet: loonie, price: 145)
+Request.create!(status: 'Accepted', start_date: '2023-05-12', end_date: '2023-05-12', carers_home: true, carer: ben, pet: dixie, price: 75)
+Request.create!(status: 'Accepted', start_date: '2023-01-07', end_date: '2023-01-09', carers_home: true, carer: rick, pet: dixie, price: 200)
 
 puts "Create forum"
 forum1 = Forum.create!(title: 'Concerned about my cat', category: 'Pet Care', description: 'my cat, Tempo, is not eating nor sleeping', user: rick)
-forum2 = Forum.create!(title: 'Heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
 forum3 = Forum.create!(title: 'Mr Bean had puppies', category: 'Pet Adoption', description: 'Anyone looking to adopt?', user: ben)
 forum4 = Forum.create!(title: 'Any nice toys for Bunnies?', category: 'Pet Toys', description: 'Not sure what to buy', user: sophie)
 forum5 = Forum.create!(title: 'Good Vets in Sydney?', category: 'Pet Services', description: 'Looking for a good vet', user: elon)
-forum5 = Forum.create!(title: 'Dog Competition Sydney', category: 'Pet Services', description: 'Anyone here going also?', user: michael)
+forum6 = Forum.create!(title: 'Dog Competition Sydney', category: 'Pet Competitions', description: 'Anyone here going also?', user: michael)
+forum7 = Forum.create!(title: 'Best food for bunnies', category: 'Pet Food', description: 'Diplomatic solutions welcome', user: sophie)
+forum8 = Forum.create!(title: 'Adopting a kitten', category: 'Pet Adoption', description: 'Looking for tips etc', user: elena)
+forum9 = Forum.create!(title: 'Cute pet stories', category: 'Pet Care', description: 'Share the love', user: sophie)
+forum10 = Forum.create!(title: 'Having a rat as a Pet?', category: 'Pet Adoption', description: 'Curious to know', user: brice)
+forum11 = Forum.create!(title: 'Dog Trainer New Castle', category: 'Pet Services', description: 'Just got my license', user: kyle)
+forum12 = Forum.create!(title: 'New Pet at home', category: 'Pet Adoption', description: 'Tips to introduce them', user: rick)
+forum13 = Forum.create!(title: 'My dog is jealous', category: 'Pet Care', description: 'What should I do?', user: ben)
+forum14 = Forum.create!(title: 'Cat names suggestions?', category: 'Pet Care', description: 'Ideas pleassse', user: genevieve)
+forum2 = Forum.create!(title: 'Anyone has heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
 
 puts 'Create Posts...'
 Post.create!(content: 'it could be due to the stress. Have you changed houses recently?', forum: forum1, user: ben)
@@ -188,7 +192,6 @@ Review.create(content: "Stan is a gem. Our dog jumps with joy when he visits!", 
 Review.create(content: "Reliable and attentive, Stan keeps pets happy and content.", user: aira, carer: stan, rating: 4.0)
 
 Review.create(content: "Great! Beth was lovely and friendly", user: aira, carer: beth, rating: 4.0)
-# Review.create(content: "Nice!", user: eric, carer: rob, rating: 3.0)
 Review.create(content: "Nice! No complains", user: maria, carer: rick, rating: 4.0)
 Review.create(content: "Would book again. No doubt.", user: elon, carer: ben, rating: 4.0)
 Review.create(content: "Was okay in the end. Although she was late for our appointment.", user: ben, carer: aira, rating: 3.0)
