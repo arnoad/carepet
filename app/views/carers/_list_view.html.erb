@@ -33,14 +33,16 @@
               <div class= "avg-rating">
               <!-- Raquel's code for avg. rating -->
                 <% avg_sum = 0 %>
-                    <% @reviews.each do |review| %>
-                      <% avg_sum += review.rating %>
-                    <% end %>
-                  <% if @reviews.count > 0 %>
-                    <% avg_rating = avg_sum / @reviews.count %>
-                    <p><i class="fa-solid fa-star"></i> <%= avg_rating.round(2)%></p>
+                <% reviews = Review.all.where(carer_id: carer) %>
+                  <% reviews.each do |review| %>
+                    <% avg_sum += review.rating %>
+                  <% end %>
+                <% avg_sum %>
+                  <% if reviews.count > 0 %>
+                    <% avg_rating = avg_sum / reviews.count %>
+                    <p><i class="fa-solid fa-star"></i> <%= avg_rating.round(1)%></p>
                   <% else %>
-                    <p><i class="fa-solid fa-star"></i> 0.0</p>
+                    <p></p>
                   <% end %>
                   <!---->
               </div>
