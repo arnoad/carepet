@@ -6,6 +6,12 @@ class CarersController < Devise::SessionsController
     @carers = User.all.where(carer: true)
     @reviews = Review.all.where(carer_id: @carer)
 
+    # Search
+    if params[:query].present?
+      params[:show_list] = "true"
+      @carers = User.near(params[:query], 200).where(carer: true)
+    end
+
     # Map
     @markers = @carers.geocoded.map do |carer|
       {
@@ -16,16 +22,10 @@ class CarersController < Devise::SessionsController
       }
     end
 
-    # Search
-    if params[:query].present?
-      @carers = @carers.search_by_carer(params[:query])
-    else
-      @carers = User.all.where(carer: true)
-    end
 
     # VIEW
     respond_to do |format|
-      format.html # Render the default HTML template
+      format.html
       format.js   # Render the corresponding JavaScript response
     end
 
