@@ -22,7 +22,9 @@
           <h6><i class="fa-solid fa-user"></i> <%= current_user.full_name %>, <%= current_user.age %></h6>
         </div>
         <div id="profile-avatar-info-text">
-          <p><i class="fa-solid fa-location-dot"></i> <%= current_user.address %></p>
+          <div class="d-flex">
+          <p><i class="fa-solid fa-location-dot"></i></p><p><%= current_user.address %></p>
+          </div>
           <p><i class="fa-solid fa-house"></i> <%= current_user.house_type %></p>
           <%#= link_to '', edit_user_registration_path, class: "fa-solid fa-pen-to-square" %>
         </div>

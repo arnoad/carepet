@@ -13,9 +13,11 @@
         <div class="profile-avatar-info-title">
           <p><i class="fa-solid fa-user"></i> <%= @carer.full_name %>, <%= @carer.age %></p>
         </div>
-        <div class="profile-avatar-info-text">
-          <p><i class="fa-solid fa-location-dot"></i> <%= @carer.address %></p>
-          <p><i class="fa-solid fa-house"></i> <%= @carer.house_type %></p>
+        <div class="show-avatar-info-text">
+          <div class="d-flex">
+            <p><i class="fa-solid fa-location-dot"></i></p><p><%= @carer.address %></p>
+          </div>
+          <p><i class="fa-solid fa-house"></i><%= @carer.house_type %></p>
             <% avg_sum = 0 %>
             <% avg_sum %>
             <% @reviews.size %>
