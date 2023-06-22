@@ -70,10 +70,16 @@ rob.save
 
 
 # Maria Gutierrez
-file = URI.open("https://randomuser.me/api/portraits/women/54.jpg")
+file = URI.open("https://randomuser.me/api/portraits/women/48.jpg")
 maria = User.create!(full_name: 'Maria Gutierrez', address: "182, Dewar Terrace, Brisbane",city: 'Brisbane', bio: "Hi all, I am Maria. Since I moved to Australia I have been trying to travel as much as my job allows. Therefore, I need someone to take care of my dog Loonie.", house_type: 'Apartment', carer: false, age: 40, email: 'maria@test.com', password: '123456')
 maria.photo.attach(io: file, filename: "maria.png", content_type: "image/png")
 maria.save
+
+# Paula Gonzalez
+file = URI.open("https://randomuser.me/api/portraits/women/54.jpg")
+laura = User.create!(full_name: 'Laura Castell', address: "64 Milsom St, Brisbane",city: 'Brisbane', bio: "Hello everyone! I am Laura. Moved to Australia IN 2017 as an au pair and felt in love with the country. So, I dediced to stay a little longer. I am usually busy studying my master and socialising with friends", house_type: 'Apartment', carer: true, age: 31, email: 'laura@test.com', password: '123456')
+laura.photo.attach(io: file, filename: "laura.png", content_type: "image/png")
+laura.save
 
 # ERIC
 file = URI.open("https://randomuser.me/api/portraits/men/98.jpg")
@@ -138,14 +144,21 @@ mrbean.save
 # Sophie's Pet
 file = URI.open("https://lafeber.com/mammals/wp-content/uploads/holland-lop-hooks-1024x683.jpg")
 dingo = pet = Pet.create!(name: 'Dingo', age: 6, pet_type: 'bunny', breed: 'dwarf', medical_cond: 'none', special_needs: 'none', user: sophie)
-dingo.photo.attach(io: file, filename: "mrbean.png", content_type: "image/png")
+dingo.photo.attach(io: file, filename: "dingo.png", content_type: "image/png")
 dingo.save
 
 # Maria's Pet
 file = URI.open("https://images.dog.ceo/breeds/sharpei/noel.jpg")
 loonie = pet = Pet.create!(name: 'Loonie', age: 6, pet_type: 'dog', breed: 'sharpei', medical_cond: 'none', special_needs: 'none', user: maria)
-loonie.photo.attach(io: file, filename: "mrbean.png", content_type: "image/png")
+loonie.photo.attach(io: file, filename: "loonie.png", content_type: "image/png")
 loonie.save
+
+# Laura's Pet
+file = URI.open("https://images.dog.ceo/breeds/poodle-medium/WhatsApp_Image_2022-08-06_at_4.48.38_PM.jpg")
+dixie= pet = Pet.create!(name: 'Dixie', age: 1, pet_type: 'dog', breed: 'poodle', medical_cond: 'none', special_needs: 'none', user: laura)
+dixie.photo.attach(io: file, filename: "dixie.png", content_type: "image/png")
+dixie.save
+
 
 puts 'Pets created...'
 
@@ -155,6 +168,11 @@ Request.create!(status: 'Pending', start_date: '2023-08-01', end_date: '2023-08-
 
 puts "Create forum"
 forum1 = Forum.create!(title: 'Concerned about my cat', category: 'Pet Care', description: 'my cat, Tempo, is not eating nor sleeping', user: rick)
+forum2 = Forum.create!(title: 'Anyone has heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
+forum3 = Forum.create!(title: 'Mr Bean had puppies', category: 'Pet Adoption', description: 'Anyone looking to adopt?', user: ben)
+forum4 = Forum.create!(title: 'Any nice toys for Bunnies?', category: 'Pet Toys', description: 'Not sure what to buy', user: sophie)
+forum5 = Forum.create!(title: 'Good Vets in Sydney?', category: 'Pet Services', description: 'Looking for a good vet', user: elon)
+forum5 = Forum.create!(title: 'Dog Competition Sydney', category: 'Pet Services', description: 'Anyone here going also?', user: michael)
 
 puts 'Create Posts...'
 Post.create!(content: 'it could be due to the stress. Have you changed houses recently?', forum: forum1, user: ben)
@@ -169,14 +187,14 @@ Review.create(content: "Stan is a pet whisperer. Our dog loves him!", user: rob,
 Review.create(content: "Stan is a gem. Our dog jumps with joy when he visits!", user: elon, carer: stan, rating: 5.0)
 Review.create(content: "Reliable and attentive, Stan keeps pets happy and content.", user: aira, carer: stan, rating: 4.0)
 
-Review.create(content: "Nice!", user: aira, carer: beth, rating: 4.0)
+Review.create(content: "Great! Beth was lovely and friendly", user: aira, carer: beth, rating: 4.0)
 # Review.create(content: "Nice!", user: eric, carer: rob, rating: 3.0)
-Review.create(content: "Nice!", user: maria, carer: rick, rating: 4.0)
-Review.create(content: "Nice!", user: elon, carer: ben, rating: 4.0)
-Review.create(content: "Nice!", user: ben, carer: aira, rating: 3.0)
-Review.create(content: "Nice!", user: aira, carer: sophie, rating: 5.0)
-Review.create(content: "Nice!", user: sophie, carer: kyle, rating: 4.0)
-Review.create(content: "Ok!", user: aira, carer: michael, rating: 2.0)
-Review.create(content: "Nice!", user: aira, carer: elena, rating: 4.0)
+Review.create(content: "Nice! No complains", user: maria, carer: rick, rating: 4.0)
+Review.create(content: "Would book again. No doubt.", user: elon, carer: ben, rating: 4.0)
+Review.create(content: "Was okay in the end. Although she was late for our appointment.", user: ben, carer: aira, rating: 3.0)
+Review.create(content: "Totally recommend Sophie. She is great with animals.", user: aira, carer: sophie, rating: 5.0)
+Review.create(content: "Left my dog only a few hours with her but no issues.", user: sophie, carer: kyle, rating: 4.0)
+Review.create(content: "Cancelled last minute. Not great!", user: aira, carer: michael, rating: 2.0)
+Review.create(content: "Everything went smooth! Would book again.", user: aira, carer: elena, rating: 4.0)
 
 puts 'SEEDS DONE !'
