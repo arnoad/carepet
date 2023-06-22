@@ -1,38 +1,3 @@
-.find-banner {
-  background-color: rgba(24, 87, 99, 0.75);
-  text-align: center;
-  margin-bottom: 10px;
-  height: 30px;
-  width: 100%;
-}
-
-
-.find-banner-subt {
-  background-color:rgba(40, 146, 164, 0.5);
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  height: 30px;
-  width: 100%;
-}
-
-
-h4 {
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-
-h3 {
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-
-
 
 .card-product {
   overflow: hidden;
@@ -48,32 +13,24 @@ h3 {
 
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   margin-left: 10px;
-}
-
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 50%;
 }
 
 
 .card-product p {
   font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
+  color: black;
+  margin-bottom: 16px;
 }
-
-
-
 
 .card-product .card-product-infos {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-content: stretch;
   justify-content: center;
   align-items: center;
@@ -103,4 +60,22 @@ h3 {
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
+}
+
+
+.map-view-button{
+  margin-bottom: 10px;
+}
+
+.card-info-text h6 {
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 16px;
+}
+
+.avg-rating {
+  height: 100%;
+  position: absolute;
+  right: 25px;
+  padding-top: 5px;
 }

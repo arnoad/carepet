@@ -1,0 +1,11 @@
+<div class='m-3'>
+  <h1>New review</h1>
+  <%= simple_form_for [@carer, @review], url: carer_reviews_path(@carer) do |f| %>
+    <%= f.input :content %>
+    <label>Choose a rating:</label><br>
+    <%= f.input :rating, collection: 1..5, include_blank: true %>
+    <br>
+    <br>
+    <%= f.submit "SUBMIT REVIEW", class: "btn-one", style: "border: none;" %>
+  <% end %>
+</div>

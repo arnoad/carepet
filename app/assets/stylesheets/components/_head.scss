@@ -12,6 +12,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-items: flex-start;
+  height: 40px;
 }
 
 
@@ -22,15 +24,13 @@ list-style-type: none;
 
 .head-brand {
   flex-grow: 0;
-
-
 }
 
 
 .head-brand img {
   max-width: 100%;
   max-height: 100%;
-  max-width: 80px;
+  max-width: 130px;
   object-fit: contain;
 }
 

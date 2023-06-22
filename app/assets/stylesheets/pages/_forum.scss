@@ -1,0 +1,94 @@
+.round-image{
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.topic-info{
+  line-height: 0.8px;
+  left: 80px;
+  position: absolute;
+}
+
+.post-date{
+  font-size: 9px;
+  color: grey;
+}
+
+.user-name{
+  font-size: 12px;
+}
+
+.title-thread{
+  font-size:10px;
+}
+
+.description {
+  font-size: 11px;
+}
+
+.category-post{
+  font-size: 9px;
+  color: grey;
+}
+
+.picture-user{
+  display: flex;
+  align-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+
+.forum-thread{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  position: relative;
+}
+
+.forum-thread{
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  vertical-align: top;
+}
+
+.icons {
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fa-heart{
+  padding-right: 10px;
+  color: #2892A4;
+}
+
+.add-circle {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  font-size: 40px;
+  /* Add any additional styles for the button */
+}
+
+#category{
+  font-size: 13px;
+  color: grey;
+}
+
+#city{
+  font-size: 13px;
+  color: grey;
+}
+
+.search-or-add{
+  margin-bottom: 20px;
+}

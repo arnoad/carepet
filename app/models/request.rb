@@ -1,15 +1,16 @@
 class Request < ApplicationRecord
   belongs_to :carer, class_name: 'User', foreign_key: :user_id
   belongs_to :pet
+  belongs_to :user
 
   before_validation :set_default_status
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :status, presence: true, inclusion: { in: ['pending', 'rejected', 'accepted'] }
+  validates :status, presence: true, inclusion: { in: ['Pending', 'Rejected', 'Accepted'] }
 
   private
 
   def set_default_status
-    self.status ||= 'pending'
+    self.status ||= 'Pending'
   end
 end

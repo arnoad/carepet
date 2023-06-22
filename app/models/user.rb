@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :posts
   has_one_attached :photo
+  has_many :reviews, dependent: :destroy
 
   validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "is not a valid email address" }
   validates :encrypted_password, presence: true, length: { minimum: 6 }
@@ -23,4 +24,13 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :full_name, presence: true
   validates :city, presence: true
+
+  #Search Bar
+  include PgSearch::Model
+  pg_search_scope :search_by_carer,
+    against: [ :city ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end

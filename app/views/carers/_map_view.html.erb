@@ -1,0 +1,13 @@
+<div class="wrapping-map">
+    <div class="head-banner">
+      <h1>Find a carer</h1>
+    </div>
+    <div class="map-carers">
+      <div style="width: 100%; height: 600px; padding: auto; margin: auto; border-radius: 8px"
+        data-controller="map"
+        data-map-markers-value="<%= markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+    <button class="tab-button list-view-button btn-two" data-action="click->view-toggle#showListView">List View</button>
+
+</div>
