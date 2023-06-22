@@ -11,7 +11,7 @@ class CarersController < Devise::SessionsController
       {
         lat: carer.latitude,
         lng: carer.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {carer: carer,}),
+        info_window_html: render_to_string(partial: "info_window", locals: { carer: carer }),
         marker_html: render_to_string(partial: "marker")
       }
     end
