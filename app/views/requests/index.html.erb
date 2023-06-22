@@ -2,7 +2,7 @@
   <div class="head-banner">
     <h1 class="request-info">Upcoming Requests</h1>
   </div>
-    <!-- My code starts here-->
+    <!-- My code starts here
     <% if @user.carer? %>
       <h6> Requests sent </h6>
       <% if @user_requests_sent.any?%>
@@ -14,47 +14,60 @@
       <% end %>
     <% end %>
 
-    <!--ends here-->
+   ends here-->
 
-    <% if @user.carer? %> <%# carer view %>
-      <% if @upcoming_requests.empty? %>
-        <p class="default-message"><em>No upcoming requests.</em></p>
-      <% else %>
-        <h6>Requests Received </h6>
-        <% @upcoming_requests.each do |request| %>
-          <%= render 'upcoming_request_for_carer', request: request %>
+    <% if @user.carer? %> <%# carer view %> <!--YES:CARER-->
+      <h6> Requests sent </h6>
+      <% if @user_requests_sent_upcoming.any? %>
+        <% @user_requests_sent_upcoming.each do |request| %>
+           <%= render 'carer_request_sent', request: request %>
+        <%end%>
+        <% else %>
+          <p class="default-message"><em>You haven't sent any request yet.</em></p>
         <% end %>
-      <% end %>
+
+      <% if @upcoming_requests.empty? %><!--YES:CARER-->
+        <h6>Requests Received </h6> <!--YES:CARER-->
+        <p class="default-message"><em>You haven't received any request yet.</em></p>
+        <% else %>
+          <h6>Requests Received </h6> <!--YES:CARER-->
+          <% @upcoming_requests.each do |request| %>
+            <%= render 'upcoming_request_for_carer', request: request %>
+          <% end %>
+        <% end %>
       <br>
         <div class="head-banner">
           <h1 class="request-info">Past Requests</h1>
         </div>
-        <% if @past_requests.empty? %>
-          <p class="default-message"><em>No past requests.</em></p>
-        <% else %>
-          <% @past_requests.each do |request| %>
-            <%= render 'past_request_for_carer', request: request %>
+        <% if @user_requests_sent_past.any? %>
+          <% @user_requests_sent_past.each do |request| %>
+            <div class="request-card">
+              <%= render 'past_request_for_carer', request: request %>
+            </div>
+            <% end %>
+          <% else %>
+            <p class="default-message"><em>No past requests.</em></p>
           <% end %>
-        <% end %>
+    <%end%>
 
-    <% else %> <%# user view %>
-      <% if @upcoming_requests.empty? %>
-        <p class="default-message"><em>No upcoming requests.</em></p>
-      <% else %>
-        <% @upcoming_requests.each do |request| %>
-          <%= render 'upcoming_request_for_pet_owner', request: request %>
-        <% end %>
-      <% end %>
-        <div class="head-banner">
-          <h1 class="request-info">Past Requests</h1>
-        </div>
-        <% if @past_requests.empty? %>
-          <p class="default-message"><em>No past requests.</em></p>
-        <% else %>
-          <% @past_requests.each do |request| %>
-            <%= render 'past_request_for_pet_owner', request: request, carer: request.carer %>
+    <% if @user.carer == false %> <%# user view %>
+        <% if @upcoming_requests.empty? %>
+          <p class="default-message"><em>No upcoming requests.</em></p>
+          <% else %>
+            <% @upcoming_requests.each do |request| %>
+              <%= render 'upcoming_request_for_pet_owner', request: request %>
+            <% end %>
           <% end %>
-        <% end %>
+          <div class="head-banner">
+            <h1 class="request-info">Past Requests</h1>
+          </div>
+          <% if @past_requests.empty? %>
+            <p class="default-message"><em>No past requests.</em></p>
+          <% else %>
+            <% @past_requests.each do |request| %>
+              <%= render 'past_request_for_pet_owner', request: request, carer: request.carer %>
+            <% end %>
+          <% end %>
     <% end %>
     <br>
     <br>
