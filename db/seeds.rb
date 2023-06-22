@@ -95,7 +95,7 @@ kyle.save
 
 # MICHAEL
 file = URI.open("https://randomuser.me/api/portraits/men/67.jpg")
-michael = User.new(full_name: "Michael Schumacher", address: "42 Martin Place, Sydney",city: "Sydney", bio: "Hi there, I'm Michael, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 45, email: 'michael@test.com', password: '123456')
+michael = User.new(full_name: "Michael Schumi", address: "42 Martin Place, Sydney",city: "Sydney", bio: "Hi there, I'm Michael, a devoted animal lover driven by a profound connection with our four-legged friends. As a member of this incredible pet sitting app, I bring my unwavering passion and dedication to delivering unparalleled care for your cherished pets.", house_type: "Terraced House", carer: true, age: 45, email: 'michael@test.com', password: '123456')
 michael.photo.attach(io: file, filename: "michael.png", content_type: "image/png")
 michael.save
 
@@ -168,7 +168,7 @@ Request.create!(status: 'Pending', start_date: '2023-08-01', end_date: '2023-08-
 
 puts "Create forum"
 forum1 = Forum.create!(title: 'Concerned about my cat', category: 'Pet Care', description: 'my cat, Tempo, is not eating nor sleeping', user: rick)
-forum2 = Forum.create!(title: 'Anyone has heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
+forum2 = Forum.create!(title: 'Heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
 forum3 = Forum.create!(title: 'Mr Bean had puppies', category: 'Pet Adoption', description: 'Anyone looking to adopt?', user: ben)
 forum4 = Forum.create!(title: 'Any nice toys for Bunnies?', category: 'Pet Toys', description: 'Not sure what to buy', user: sophie)
 forum5 = Forum.create!(title: 'Good Vets in Sydney?', category: 'Pet Services', description: 'Looking for a good vet', user: elon)
