@@ -10,13 +10,19 @@
   position: absolute;
 }
 
-.post-date{
+p#post-date{
   font-size: 9px;
   color: grey;
+  margin-top: 5px;
+}
+
+p.description{
+  color: grey;
+  font-size: 11px;
 }
 
 .user-name{
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .title-thread{
@@ -72,9 +78,11 @@
 }
 
 .add-circle {
-  position: fixed;
-  bottom: 100px;
-  right: 50px;
+  position: absolute;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  top: 156px;
+  right: 20px;
   font-size: 40px;
   /* Add any additional styles for the button */
 }
@@ -90,5 +98,5 @@
 }
 
 .search-or-add{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }

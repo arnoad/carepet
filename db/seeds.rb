@@ -163,20 +163,20 @@ Request.create!(status: 'Accepted', start_date: '2023-05-12', end_date: '2023-05
 Request.create!(status: 'Accepted', start_date: '2023-01-07', end_date: '2023-01-09', carers_home: true, carer: rick, pet: dixie, price: 200)
 
 puts "Create forum"
-forum1 = Forum.create!(title: 'Concerned about my cat', category: 'Pet Care', description: 'my cat, Tempo, is not eating nor sleeping', user: rick)
+forum1 = Forum.create!(title: 'Cat acting weird', category: 'Pet Care', description: 'my cat, Tempo, is not eating nor sleeping', user: rick)
 forum3 = Forum.create!(title: 'Mr Bean had puppies', category: 'Pet Adoption', description: 'Anyone looking to adopt?', user: ben)
 forum4 = Forum.create!(title: 'Any nice toys for Bunnies?', category: 'Pet Toys', description: 'Not sure what to buy', user: sophie)
 forum5 = Forum.create!(title: 'Good Vets in Sydney?', category: 'Pet Services', description: 'Looking for a good vet', user: elon)
-forum6 = Forum.create!(title: 'Dog Competition Sydney', category: 'Pet Competitions', description: 'Anyone here going also?', user: michael)
+forum6 = Forum.create!(title: 'Dog Competition', category: 'Pet Competitions', description: 'Anyone here going also?', user: michael)
 forum7 = Forum.create!(title: 'Best food for bunnies', category: 'Pet Food', description: 'Diplomatic solutions welcome', user: sophie)
 forum8 = Forum.create!(title: 'Adopting a kitten', category: 'Pet Adoption', description: 'Looking for tips etc', user: elena)
 forum9 = Forum.create!(title: 'Cute pet stories', category: 'Pet Care', description: 'Share the love', user: sophie)
 forum10 = Forum.create!(title: 'Having a rat as a Pet?', category: 'Pet Adoption', description: 'Curious to know', user: brice)
-forum11 = Forum.create!(title: 'Dog Trainer New Castle', category: 'Pet Services', description: 'Just got my license', user: kyle)
+forum11 = Forum.create!(title: 'Dog Trainer Offer', category: 'Pet Services', description: 'Just got my license', user: kyle)
 forum12 = Forum.create!(title: 'New Pet at home', category: 'Pet Adoption', description: 'Tips to introduce them', user: rick)
 forum13 = Forum.create!(title: 'My dog is jealous', category: 'Pet Care', description: 'What should I do?', user: ben)
 forum14 = Forum.create!(title: 'Cat names suggestions?', category: 'Pet Care', description: 'Ideas pleassse', user: genevieve)
-forum2 = Forum.create!(title: 'Anyone has heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
+forum2 = Forum.create!(title: 'Heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
 
 puts 'Create Posts...'
 Post.create!(content: 'it could be due to the stress. Have you changed houses recently?', forum: forum1, user: ben)
