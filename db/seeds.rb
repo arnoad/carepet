@@ -176,7 +176,7 @@ forum11 = Forum.create!(title: 'Dog Trainer New Castle', category: 'Pet Services
 forum12 = Forum.create!(title: 'New Pet at home', category: 'Pet Adoption', description: 'Tips to introduce them', user: rick)
 forum13 = Forum.create!(title: 'My dog is jealous', category: 'Pet Care', description: 'What should I do?', user: ben)
 forum14 = Forum.create!(title: 'Cat names suggestions?', category: 'Pet Care', description: 'Ideas pleassse', user: genevieve)
-forum2 = Forum.create!(title: 'Anyone has heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
+forum2 = Forum.create!(title: 'Heard of Kennel Cough?', category: 'Pet Care', description: 'Loonie got it but no treatment given...', user: maria)
 
 puts 'Create Posts...'
 Post.create!(content: 'it could be due to the stress. Have you changed houses recently?', forum: forum1, user: ben)
