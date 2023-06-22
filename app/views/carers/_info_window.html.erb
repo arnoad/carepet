@@ -1,29 +1,31 @@
 <h6><%= link_to carer_path(carer), style: "text-decoration: none;" do %></h6>
-  <div>
-    <div class="pict-rat-window">
+  <div class="review-card-map">
+    <div class="review-avatar-info">
       <% if carer.photo.present? %>
         <%= cl_image_tag carer.photo.key, class: "avatar-small" %>
       <% end%>
+      <div class="review-avatar-info-text">
+        <!-- Raquel's code for avg. rating -->
+        <% avg_sum = 0 %>
+        <% reviews = Review.all.where(carer_id: carer) %>
+          <% reviews.each do |review| %>
+            <% avg_sum += review.rating %>
+          <% end %>
+        <% avg_sum %>
+          <% if reviews.count > 0 %>
+            <% avg_rating = avg_sum / reviews.count %>
+            <p><i class="fa-solid fa-star"></i> <%= avg_rating.round(1)%></p>
+          <% else %>
+            <p><i class="fa-solid fa-star"></i> 3.0</p>
+          <% end %>
+        <!---->
+      </div>
     </div>
-    <div class= "avg-rating-map">
-      <!-- Raquel's code for avg. rating -->
-      <% avg_sum = 0 %>
-      <% reviews = Review.all.where(carer_id: carer) %>
-        <% reviews.each do |review| %>
-          <% avg_sum += review.rating %>
-        <% end %>
-      <% avg_sum %>
-        <% if reviews.count > 0 %>
-          <% avg_rating = avg_sum / reviews.count %>
-          <p><i class="fa-solid fa-star"></i> <%= avg_rating.round(1)%></p>
-        <% else %>
-          <p></p>
-        <% end %>
-      <!---->
-    </div>
-    <div class="text-window">
+    <div class="review-card-info-map">
       <p><i class="fa-solid fa-user"></i> <%= carer.full_name %>, <%= carer.age %></p>
-      <p><i class="fa-solid fa-location-dot"></i> <%= carer.address %></p>
+        <div class="d-flex">
+          <p><i class="fa-solid fa-location-dot"></i></p><p><%= carer.address %></p>
+        </div>
       <p><i class="fa-solid fa-house"></i> <%= carer.house_type %></p>
     </div>
   </div>
