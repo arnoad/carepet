@@ -72,9 +72,11 @@
 }
 
 .add-circle {
-  position: fixed;
-  bottom: 100px;
-  right: 50px;
+  position: absolute;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  top: 156px;
+  right: 20px;
   font-size: 40px;
   /* Add any additional styles for the button */
 }
@@ -90,5 +92,5 @@
 }
 
 .search-or-add{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
